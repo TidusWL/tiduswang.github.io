@@ -1,649 +1,1767 @@
 <!DOCTYPE html>
-<html class="light" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Tidus Wang — GC IS&T Project Manager (Version B · Refined Motion)</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-secondary": "#ffffff", "on-secondary-fixed-variant": "#5d4201", "surface-container-lowest": "#ffffff", "inverse-surface": "#2e3132", "surface-container-low": "#f3f4f5", error: "#ba1a1a", outline: "#74777f", "inverse-on-surface": "#f0f1f2", "secondary-container": "#fed488", "surface-dim": "#d9dadb", "on-secondary-fixed": "#261900", surface: "#f8f9fa", "on-tertiary": "#ffffff", "on-primary-fixed": "#001b3d", "surface-tint": "#465f88", "surface-bright": "#f8f9fa", "secondary-fixed": "#ffdea5", "on-primary-container": "#708ab5", "inverse-primary": "#aec7f6", "on-secondary-container": "#785a1a", "on-tertiary-fixed-variant": "#3c475a", primary: "#000a1e", "on-surface-variant": "#44474e", "on-error-container": "#93000a", "outline-variant": "#c4c6cf", "surface-container-high": "#e7e8e9", "surface-variant": "#e1e3e4", "surface-container": "#edeeef", "primary-fixed-dim": "#aec7f6", "on-primary": "#ffffff", "on-background": "#191c1d", secondary: "#775a19", "on-error": "#ffffff", "error-container": "#ffdad6", "on-primary-fixed-variant": "#2d476f", "on-tertiary-container": "#7e899e", background: "#f8f9fa", "tertiary-fixed": "#d8e3fa", "on-tertiary-fixed": "#111c2c", tertiary: "#020b1b", "tertiary-fixed-dim": "#bcc7dd", "surface-container-highest": "#e1e3e4", "on-surface": "#191c1d", "primary-fixed": "#d6e3ff", "primary-container": "#002147", "tertiary-container": "#172233", "secondary-fixed-dim": "#e9c176"}, borderRadius: {DEFAULT: "0.125rem", lg: "0.25rem", xl: "0.5rem", full: "0.75rem"}, spacing: {"stack-sm": "8px", "margin-mobile": "16px", "section-gap": "80px", "container-max": "1280px", "stack-lg": "32px", unit: "8px", "margin-desktop": "48px", "stack-md": "16px", gutter: "24px"}, fontFamily: {"label-md": ["Inter"], "display-lg-mobile": ["Newsreader"], "display-lg": ["Newsreader"], "body-lg": ["Inter"], "headline-sm": ["Newsreader"], "headline-md": ["Newsreader"], "body-md": ["Inter"], "label-sm": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"label-md": ["14px", {lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600"}], "display-lg-mobile": ["32px", {lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600"}], "display-lg": ["48px", {lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "600"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}], "headline-sm": ["24px", {lineHeight: "32px", fontWeight: "500"}], "headline-md": ["32px", {lineHeight: "40px", fontWeight: "500"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "label-sm": ["12px", {lineHeight: "16px", fontWeight: "500"}]}}}};
-</script>
-<style>
-  :root { --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tidus Wang - IS&T Project Delivery Leader</title>
+  <meta name="description" content="Tidus Wang - 12+ years delivering retail technology, digitalization and AI programs across Greater China.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --lime: #a3e635;
+      --lime-strong: #84cc16;
+      --lime-soft: #eef9d8;
+      --ink: #10130e;
+      --muted: #5b6470;
+      --bg: #f4f6f1;
+      --card: #ffffff;
+      --line: #e1e5dc;
+      --dark: #101413;
+      --dark-line: #242a26;
+      --radius: 6px;
+      --ease: cubic-bezier(.22, 1, .36, 1);
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+    }
 
-  /* === 原版样式完整保留 === */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            background-color: #f8f9fa;
-            color: #191c1d;
-            -webkit-font-smoothing: antialiased;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .career-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0.75rem;
-            top: 0.5rem;
-            bottom: 0.5rem;
-            width: 1px;
-            background-color: #c4c6cf;
-        }
-        .card-shadow {
-            box-shadow: 0 4px 20px rgba(0, 33, 71, 0.05);
-            border: 1px solid #e1e3e4;
-        }
-        @media (max-width: 768px) {
-            .mobile-hide { display: none; }
-        }
-        .luxury-line {
-            height: 2px;
-            background: linear-gradient(to right, #002147, transparent);
-        }
-    
+    html { scroll-behavior: smooth; }
 
     body {
-      min-height: max(884px, 100dvh);
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-  
 
-    body {
-      min-height: max(884px, 100dvh);
+    ::selection { background: var(--lime); color: var(--ink); }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { display: block; max-width: 100%; }
+
+    .wrap {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
     }
-  
 
-  /* ============ Version B Animations ============ */
+    section { scroll-margin-top: 84px; }
 
-  /* 1. Animated background — soft gradient blobs floating */
-  body::before, body::after {
-    content: '';
-    position: fixed;
-    width: 520px; height: 520px;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.35;
-    z-index: -1;
-    pointer-events: none;
-  }
-  body::before {
-    background: radial-gradient(circle, #d6e3ff 0%, transparent 70%);
-    top: -120px; left: -120px;
-    animation: blobFloatA 18s var(--ease) infinite alternate;
-  }
-  body::after {
-    background: radial-gradient(circle, #fed488 0%, transparent 70%);
-    bottom: -160px; right: -160px;
-    animation: blobFloatB 22s var(--ease) infinite alternate;
-  }
-  @keyframes blobFloatA {
-    0%   { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(80px, 60px) scale(1.15); }
-  }
-  @keyframes blobFloatB {
-    0%   { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(-60px, -80px) scale(1.1); }
-  }
-
-  /* 2. Hero title — character reveal */
-  .hero-title .char {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(40%) rotate(8deg);
-    animation: charIn 0.7s var(--ease) forwards;
-  }
-  @keyframes charIn {
-    to { opacity: 1; transform: translateY(0) rotate(0); }
-  }
-
-  /* 3. Hero paragraph — word fade */
-  .hero-para .word {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(12px);
-    animation: wordIn 0.6s var(--ease) forwards;
-  }
-  @keyframes wordIn {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* 4. 3D Tilt cards (mouse-tracked) */
-  .tilt-card {
-    transform-style: preserve-3d;
-    transform: perspective(1000px) rotateX(0) rotateY(0);
-    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
-    will-change: transform;
-  }
-  .tilt-card:hover {
-    box-shadow: 0 18px 40px rgba(0, 33, 71, 0.12);
-  }
-  .tilt-inner { transform: translateZ(30px); }
-
-  /* 5. Skill bars — width transition (filled by JS) */
-  .skill-bar-fill {
-    width: 0;
-    transition: width 1.8s var(--ease);
-  }
-
-  /* 6. Reveal on scroll */
-  .reveal {
-    opacity: 0;
-    transform: translateY(36px);
-    transition: opacity 1s var(--ease), transform 1s var(--ease);
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* 7. Active timeline dot glow */
-  .timeline-dot-active {
-    box-shadow: 0 0 0 0 rgba(0, 33, 71, 0.5);
-    animation: dotGlow 2.6s var(--ease) infinite;
-  }
-  @keyframes dotGlow {
-    0%   { box-shadow: 0 0 0 0   rgba(0, 33, 71, 0.5); }
-    70%  { box-shadow: 0 0 0 14px rgba(0, 33, 71, 0); }
-    100% { box-shadow: 0 0 0 0   rgba(0, 33, 71, 0); }
-  }
-
-  /* 8. Magnetic nav links */
-  nav a {
-    position: relative;
-    display: inline-block;
-    transition: transform 0.3s var(--ease);
-  }
-  nav a::after {
-    content: '';
-    position: absolute;
-    left: 0; bottom: -2px;
-    width: 0; height: 1px;
-    background: #002147;
-    transition: width 0.4s var(--ease);
-  }
-  nav a:hover::after { width: 100%; }
-
-  /* 9. Software icon hover lift */
-  .sw-icon {
-    transition: transform 0.4s var(--ease), background-color 0.4s var(--ease);
-  }
-  .sw-icon:hover {
-    transform: translateY(-4px) scale(1.05);
-    background-color: #f8f9fa;
-  }
-
-  /* 10. Header shadow on scroll */
-  header.is-scrolled {
-    box-shadow: 0 6px 24px rgba(0, 33, 71, 0.08);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.001ms !important;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
-    .reveal { opacity: 1; transform: none; }
-    body::before, body::after { display: none; }
-  }
-</style>
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--lime-strong);
+      border-radius: 2px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .section-note {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ---------- Header ---------- */
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      background: rgba(244, 246, 241, .82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
+    }
+
+    .site-header.is-scrolled {
+      border-color: var(--line);
+      box-shadow: 0 10px 30px rgba(16, 19, 14, .06);
+    }
+
+    .header-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: var(--lime);
+      border-radius: var(--radius);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .brand-role {
+      font-size: 10px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .main-nav a {
+      position: relative;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color .25s var(--ease);
+    }
+
+    .main-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--lime-strong);
+      transition: width .35s var(--ease);
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--ink);
+    }
+
+    .main-nav a:hover::after,
+    .main-nav a.active::after {
+      width: 100%;
+    }
+
+    .header-year {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--muted);
+    }
+
+    .header-year::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--lime-strong);
+      animation: blink 2s infinite;
+    }
+
+    .menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      cursor: pointer;
+      place-items: center;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .35; }
+    }
+
+    /* ---------- Hero ---------- */
+
+    .hero {
+      padding-top: 150px;
+      padding-bottom: 96px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(56px, 8.6vw, 118px);
+      line-height: .92;
+      letter-spacing: -.02em;
+      text-transform: uppercase;
+      margin: 28px 0 30px;
+    }
+
+    .hero-title .line {
+      display: block;
+      opacity: 0;
+      transform: translateY(34%);
+      animation: lineUp .9s var(--ease) forwards;
+    }
+
+    .hero-title .line:nth-child(1) { animation-delay: .08s; }
+    .hero-title .line:nth-child(2) { animation-delay: .2s; color: var(--lime-strong); }
+    .hero-title .line:nth-child(3) { animation-delay: .32s; }
+
+    @keyframes lineUp {
+      to { opacity: 1; transform: none; }
+    }
+
+    .hero-sub {
+      max-width: 560px;
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 34px;
+      opacity: 0;
+      animation: fadeUp .9s var(--ease) .5s forwards;
+    }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: none; }
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      opacity: 0;
+      animation: fadeUp .9s var(--ease) .62s forwards;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      color: var(--muted);
+    }
+
+    .chip svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--lime-strong);
+    }
+
+    .avail-box {
+      margin-top: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: 0 18px 40px rgba(16, 19, 14, .07);
+      font-size: 13px;
+      opacity: 0;
+      animation: fadeUp .9s var(--ease) .72s forwards;
+    }
+
+    .avail-box strong {
+      font-family: var(--font-display);
+      color: var(--lime-strong);
+      font-weight: 700;
+    }
+
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--lime-strong);
+      box-shadow: 0 0 0 0 rgba(132, 204, 22, .55);
+      animation: pulse 2.4s var(--ease) infinite;
+    }
+
+    @keyframes pulse {
+      70% { box-shadow: 0 0 0 12px rgba(132, 204, 22, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(132, 204, 22, 0); }
+    }
+
+    .hero-media {
+      position: relative;
+      opacity: 0;
+      animation: fadeUp 1s var(--ease) .55s forwards;
+    }
+
+    .portrait {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 10px;
+      background: #dfe3da;
+      box-shadow: 0 30px 70px rgba(16, 19, 14, .16);
+    }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portrait::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 54px;
+      height: 54px;
+      border-top: 3px solid var(--lime);
+      border-right: 3px solid var(--lime);
+      border-radius: 0 10px 0 0;
+      z-index: 2;
+    }
+
+    .ring {
+      position: absolute;
+      border: 2px solid rgba(132, 204, 22, .35);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .ring-1 {
+      width: 74%;
+      height: 74%;
+      top: -36px;
+      right: -44px;
+      animation: spin 40s linear infinite;
+    }
+
+    .ring-2 {
+      width: 110px;
+      height: 110px;
+      bottom: -30px;
+      left: -34px;
+      border-style: dashed;
+      animation: spin 26s linear infinite reverse;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-tag {
+      position: absolute;
+      bottom: 22px;
+      left: -16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: var(--radius);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      box-shadow: 0 14px 30px rgba(16, 19, 14, .22);
+    }
+
+    .hero-tag::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--lime);
+    }
+
+    /* ---------- General sections ---------- */
+
+    .section {
+      padding: 84px 0;
+    }
+
+    .section-alt {
+      background: var(--card);
+      border-block: 1px solid var(--line);
+    }
+
+    /* ---------- Services ---------- */
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(16, 19, 14, .09);
+      border-color: #cfe3ae;
+    }
+
+    .card-num {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 44px;
+    }
+
+    .card-num span {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--lime-strong);
+      font-size: 18px;
+    }
+
+    .card-num .glyph {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--muted);
+      background: var(--bg);
+      transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+    }
+
+    .card:hover .glyph {
+      background: var(--lime);
+      border-color: var(--lime);
+      color: var(--ink);
+    }
+
+    .card h3 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ---------- Work ---------- */
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .work-cover {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+    }
+
+    .work-cover .cover-bg {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .cover-a { background: linear-gradient(135deg, #1d2b1d, #3e5c36 55%, #84cc16); }
+    .cover-b { background: linear-gradient(135deg, #101413, #2c3a2f 60%, #6ea52e); }
+    .cover-c { background: linear-gradient(135deg, #2b3328, #556148 60%, #9db68b); }
+
+    .work-cover svg {
+      width: 64px;
+      height: 64px;
+      stroke: rgba(255, 255, 255, .92);
+      stroke-width: 1.4;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .work-cover .cover-label {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      padding: 5px 9px;
+      background: rgba(16, 19, 14, .55);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .work-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .work-meta .num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--lime-strong);
+      font-size: 15px;
+    }
+
+    .work-meta .scope {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 4px 9px;
+      border-radius: 999px;
+    }
+
+    .work-card h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .work-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .work-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .work-arrow svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--lime-strong);
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: transform .3s var(--ease);
+    }
+
+    .card:hover .work-arrow svg {
+      transform: translate(4px, -4px);
+    }
+
+    /* ---------- Stats ---------- */
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 32px 16px;
+    }
+
+    .stat-value {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: 1;
+      color: var(--lime-strong);
+    }
+
+    .stat-label {
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ---------- Experience ---------- */
+
+    .layout-2col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      padding-left: 30px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .job {
+      position: relative;
+      padding: 26px 26px 22px;
+    }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      left: -28px;
+      top: 30px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--lime);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 2px rgba(132, 204, 22, .4);
+    }
+
+    .job:not(:first-child)::before {
+      background: #c9cdc3;
+      box-shadow: none;
+    }
+
+    .job-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .job-top h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .job-period {
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 5px 10px;
+      border-radius: 999px;
+    }
+
+    .job-company {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--lime-strong);
+      margin-bottom: 14px;
+    }
+
+    .job ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .job li {
+      position: relative;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .job li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 1px;
+      background: var(--lime-strong);
+    }
+
+    /* ---------- Sidebar ---------- */
+
+    .side {
+      display: grid;
+      gap: 18px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .side-card {
+      padding: 26px;
+    }
+
+    .side-card h3 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .side-card h3::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: var(--lime-strong);
+    }
+
+    .skill-row {
+      margin-bottom: 18px;
+    }
+
+    .skill-row:last-child { margin-bottom: 0; }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .skill-top .pct {
+      color: var(--lime-strong);
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+
+    .bar {
+      height: 6px;
+      border-radius: 3px;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      width: 0;
+      height: 100%;
+      background: var(--lime-strong);
+      border-radius: 3px;
+      transition: width 1.5s var(--ease);
+    }
+
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    .tool {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .tool-tile {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink);
+      transition: transform .3s var(--ease), background .3s var(--ease);
+    }
+
+    .tool:hover .tool-tile {
+      transform: translateY(-3px);
+      background: var(--lime);
+    }
+
+    .tag-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 7px 11px;
+      border-radius: 999px;
+      transition: border-color .3s var(--ease), color .3s var(--ease);
+    }
+
+    .tag:hover {
+      border-color: var(--lime-strong);
+      color: var(--ink);
+    }
+
+    .credential-grid {
+      gap: 10px;
+    }
+
+    .credential {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+    }
+
+    .credential .seal {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--lime-soft);
+      color: var(--lime-strong);
+    }
+
+    .credential h4 {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .credential p {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .edu {
+      padding: 20px;
+    }
+
+    .edu h4 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+
+    .edu .school {
+      font-size: 13px;
+      color: var(--lime-strong);
+      font-weight: 600;
+    }
+
+    .edu .years {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: var(--muted);
+    }
+
+    /* ---------- CTA ---------- */
+
+    .cta {
+      background: var(--dark);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta .wrap {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 48px;
+      align-items: center;
+      padding-block: 28px;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      right: -180px;
+      top: -220px;
+      border-radius: 50%;
+      border: 2px dashed rgba(163, 230, 53, .35);
+      animation: spin 60s linear infinite;
+    }
+
+    .cta::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      left: -90px;
+      bottom: -120px;
+      border-radius: 50%;
+      border: 2px solid rgba(163, 230, 53, .25);
+    }
+
+    .cta h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: .98;
+      text-transform: uppercase;
+      margin-top: 18px;
+    }
+
+    .cta h2 .accent {
+      color: var(--lime);
+    }
+
+    .cta p {
+      color: #aab3a4;
+      margin-top: 22px;
+      max-width: 460px;
+      font-size: 15px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 26px;
+      background: var(--lime);
+      color: var(--ink);
+      border: none;
+      border-radius: var(--radius);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      cursor: pointer;
+      transition: background .3s var(--ease), transform .3s var(--ease);
+    }
+
+    .btn:hover {
+      background: #b7f04f;
+      transform: translateY(-2px);
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      color: #cdd4c8;
+      font-size: 14px;
+      transition: color .3s var(--ease);
+    }
+
+    .contact-item:hover { color: #fff; }
+
+    .contact-item .label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      color: var(--lime);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+
+    .contact-item svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      stroke: var(--lime);
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ---------- Footer ---------- */
+
+    .site-footer {
+      background: var(--dark);
+      border-top: 1px solid var(--dark-line);
+      color: #8f988c;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 26px 0;
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color .3s var(--ease);
+    }
+
+    .footer-links a:hover {
+      color: var(--lime);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+
+      .reveal { opacity: 1; transform: none; }
+
+      html { scroll-behavior: auto; }
+    }
+
+    /* ---------- Responsive ---------- */
+
+    @media (max-width: 1024px) {
+      .hero-grid { gap: 36px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .layout-2col { grid-template-columns: 1fr; }
+      .side { position: static; }
+      .hero-media { max-width: 420px; }
+      .ring-1 { right: -26px; }
+    }
+
+    @media (max-width: 900px) {
+      .main-nav {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--card);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 24px 40px rgba(16, 19, 14, .12);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform .35s var(--ease), opacity .35s var(--ease), visibility .35s;
+      }
+
+      .main-nav.open {
+        transform: scaleY(1);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .main-nav a {
+        padding: 16px 24px;
+      }
+
+      .header-year { display: none; }
+
+      .menu-btn { display: grid; }
+
+      .work-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cta .wrap { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 32px, 1180px); }
+
+      .hero { padding-top: 122px; padding-bottom: 64px; }
+
+      .hero-grid { grid-template-columns: 1fr; }
+
+      .hero-title {
+        font-size: clamp(46px, 13.5vw, 72px);
+      }
+
+      .hero-media {
+        max-width: 420px;
+        margin-inline: auto;
+        width: 100%;
+      }
+
+      .hero-tag { left: 10px; }
+
+      .section { padding: 64px 0; }
+
+      .service-grid { grid-template-columns: 1fr; }
+
+      .ring-1 {
+        width: 62%;
+        height: 62%;
+        top: -24px;
+        right: -14px;
+      }
+
+      .ring-2 {
+        width: 84px;
+        height: 84px;
+        bottom: -16px;
+        left: -14px;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 28px;
+      }
+
+      .section-note { text-align: left; }
+
+      .job-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-<body class="font-body-md text-body-md pb-24 md:pb-0">
+<body>
 
-<!-- TopAppBar -->
-<header id="topbar" class="w-full top-0 sticky z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant transition-shadow duration-300">
-  <div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
-    <div class="flex items-center gap-4">
-      <div class="w-10 h-10 rounded-full overflow-hidden border border-primary-container">
-        <img class="w-full h-full object-cover" alt="Tidus Wang" src="assets/images/1.png">
-      </div>
-      <h1 class="font-headline-sm text-primary-container">Tidus Wang</h1>
-    </div>
-    <div class="hidden md:flex items-center gap-10">
-      <nav class="flex gap-8">
-        <a class="text-primary-container font-semibold hover:text-primary transition-colors duration-250 cursor-pointer text-label-md" href="#experience">EXPERIENCE</a>
-        <a class="text-on-surface-variant hover:text-primary-container transition-colors duration-250 cursor-pointer text-label-md" href="#skills">SKILLS</a>
-        <a class="text-on-surface-variant hover:text-primary-container transition-colors duration-250 cursor-pointer text-label-md" href="#education">EDUCATION</a>
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <div class="brand-mark">TW</div>
+        <div class="brand-copy">
+          <span class="brand-name">Tidus Wang</span>
+          <span class="brand-role">IS&T Project Delivery</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <span class="material-symbols-outlined text-primary-container cursor-pointer">more_vert</span>
-    </div>
-    <div class="md:hidden">
-      <span class="material-symbols-outlined text-primary-container">more_vert</span>
-    </div>
-  </div>
-</header>
 
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-section-gap">
-<!-- Hero / Summary Section -->
-<section class="mb-section-gap">
-  <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-    <div class="md:col-span-7">
-      <h2 id="heroTitle" class="hero-title font-display-lg-mobile md:font-display-lg text-primary-container mb-6 italic">
-        GC IS&amp;T Project Manager
-      </h2>
-      <div class="luxury-line w-24 mb-8"></div>
-      <p id="heroPara" class="hero-para font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-        From retail tech builder to luxury digitalization leader. 12 years building and running retail technology — from POS, backend systems to eCommerce and omnichannel platforms — first in global sportswear (adidas, PUMA), and now in charge of digital solutions for LVMH Watch & Jewellery in China. Over the past 7 years at group level, I have been driving cross-brand digitalization, cybersecurity compliance, and the latest wave of AI/GAI adoption across 5 brands. Known for bridging business, technology and compliance, and for turning multi-team complexity into shipped, measurable outcomes
-      </p>
-    </div>
-    <div class="md:col-span-5 flex justify-end">
-      <div class="tilt-card relative w-full aspect-[4/5] max-w-[400px] rounded-lg overflow-hidden card-shadow" data-tilt>
-        <img class="tilt-inner w-full h-full object-cover" alt="Workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxU7-7uJJmfCSVO-H_4jjTjwi51jIDD79LhQ1-OSRaJlyYerBuyWyB3qVh0zLPL9u473kls8rPIYYeZ-yhX5MeZzSnVZTg-P0vBTdo8I37yMSniMJ33MGmqooFDI0N8_MScnFzOaErPGq3D_LV1YE-70tpiTqO7IJiM6ZGBfvM_TAXLv5idjkOMDSh8NjkcOlbBsZ30cNy91ercvm4lR1iO2QSRqYrCM02v9Y8KHg2hdYkBmlXWJK0C1CjLEPjmMj4hM2N99OS7uvM">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="header-year">2026 Portfolio</span>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- Main Layout -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-
-  <!-- Left Column -->
-  <div class="lg:col-span-8">
-    <section class="mb-section-gap reveal" id="experience">
-      <div class="flex items-center gap-4 mb-10">
-        <span class="material-symbols-outlined text-primary-container scale-125">work</span>
-        <h3 class="font-headline-md text-primary-container">Professional Experience</h3>
-      </div>
-      <div class="space-y-16 relative career-timeline pl-10">
-        <!-- Job 1 -->
-        <div class="relative reveal">
-          <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-primary-container border-4 border-surface timeline-dot-active"></div>
-          <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-3">
-            <h4 class="font-headline-sm text-primary-container">GC IS&amp;T Project Manager</h4>
-            <span class="font-label-sm tracking-widest text-on-surface-variant bg-surface-container px-4 py-1.5 rounded-full mt-2 md:mt-0">2019 — PRESENT</span>
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Tech Delivery Leader - Greater China</span>
+          <h1 class="hero-title">
+            <span class="line">Deliver</span>
+            <span class="line">Technology</span>
+            <span class="line">Impact.</span>
+          </h1>
+          <p class="hero-sub">
+            I lead IS&amp;T project delivery across luxury retail in China - planning,
+            governing and shipping digital solutions that work. 12+ years building and
+            running retail technology at adidas, PUMA, and LVMH Watch &amp; Jewellery.
+          </p>
+          <div class="hero-badges">
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+              Based in Shanghai
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 5z"/><path d="M12 22c2.5-2.6 3.8-5.7 3.8-9S14.5 8.6 12 6c-2.5 2.6-3.8 5.7-3.8 9S9.5 21.4 12 22z"/></svg>
+              Working Worldwide
+            </span>
           </div>
-          <p class="font-label-md text-primary-fixed-variant font-semibold mb-5">LVMH Watch &amp; Jewellery (Shanghai) Commercial Co., Ltd.</p>
-          <ul class="space-y-4 list-none text-on-surface-variant">
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Lead IS&T project management and delivery across Greater China markets</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Collaborate with multiple brand HQs, group IT division, and internal/external stakeholders</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Actively contribute to annual planning and budgetary process for the function</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Drive cybersecurity compliance activities (Multi-Level Protection Scheme, Personal Information Protection Law, Cross-Border Data Transfer, etc.)</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Spearhead digitalization in China market — provide IT solution design and project management to support brands implementing new digital solutions including CRM and eCommerce</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Build, integrate and iteratively enhance Data Platform and AI technology to fulfill evolving business needs</span></li>
-          </ul>
-        </div>
-
-        <!-- Job 2 -->
-        <div class="relative reveal">
-          <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-outline-variant border-4 border-surface"></div>
-          <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-3">
-            <h4 class="font-headline-sm text-primary-container">Assistant Manager — Retail &amp; eCom IT</h4>
-            <span class="font-label-sm tracking-widest text-on-surface-variant bg-surface-container px-4 py-1.5 rounded-full mt-2 md:mt-0">2014 — 2019</span>
-          </div>
-          <p class="font-label-md text-primary-fixed-variant font-semibold mb-5">Puma China Ltd.</p>
-          <ul class="space-y-4 list-none text-on-surface-variant">
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Managed and provided direction to functional team supporting retail and eCommerce operations; continuously reviewed system processes to ensure stable performance and evolution in line with business needs</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Oversaw IT support for store openings, refits and closures; ensured timely delivery of IT work assignments locally and globally in accordance with Puma standards</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Led business requirement gathering, identified opportunities for operational excellence and transformed them into change projects prioritized by business needs</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Actively contributed to annual planning and budgetary process for the function</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Maximized usage of current systems/tools and developed training programs to improve system knowledge and skills across the business</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Set and reviewed performance and development plans with direct reports; proactively developed team capabilities through job coaching</span></li>
-          </ul>
-        </div>
-
-        <!-- Job 3 -->
-        <div class="relative reveal">
-          <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-outline-variant border-4 border-surface"></div>
-          <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-3">
-            <h4 class="font-headline-sm text-primary-container">Business Analyst, IT Department</h4>
-            <span class="font-label-sm tracking-widest text-on-surface-variant bg-surface-container px-4 py-1.5 rounded-full mt-2 md:mt-0">2007 — 2014</span>
-          </div>
-          <p class="font-label-md text-primary-fixed-variant font-semibold mb-5">Adidas Greater China</p>
-          <ul class="space-y-4 list-none text-on-surface-variant">
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Supported 30+ backend users and 110+ retail stores; led 3 support engineers handling daily incidents and service requests</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Participated in 10+ global projects across multiple retail functions (POS, CRM, Business Intelligence, eCommerce)</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Responsible for system analysis, user requirement collection and communication with global development team for system changes; performed UAT, training and implementation for new system functions</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Coordinated with cross-functional departments (retail operations, retail expansion, finance, retail marketing, merchandising) to support new store rollouts</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Provided application support to business functions; liaised with IT Helpdesk, technical teams, vendors and application teams to resolve issues, communicate changes/impacts and implement upgrades</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Led and participated in localization projects including content management system, traffic counting solution, and retail mobile solution</span></li>
-            <li class="flex gap-3"><span class="text-primary-container mt-1.5 text-xs">•</span><span>Participated in merchandise automation project to support assortment plan operations</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Right Column -->
-  <div class="lg:col-span-4 space-y-16">
-    <!-- Skills Section -->
-    <section id="skills" class="reveal">
-      <div class="flex items-center gap-3 mb-8">
-        <span class="material-symbols-outlined text-primary-container">psychology</span>
-        <h3 class="font-headline-sm text-primary-container">Expertise</h3>
-      </div>
-      <div class="bg-surface-container-lowest p-8 rounded-xl card-shadow">
-        <div class="space-y-8" id="skills-bars">
-          <div class="skill-row">
-            <div class="flex justify-between mb-3">
-              <span class="font-label-md text-on-surface">Project Management (Waterfall & Agile)</span>
-              <span class="skill-pct font-label-sm text-primary-container">0%</span>
-            </div>
-            <div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
-              <div class="skill-bar-fill h-full bg-primary-container" data-pct="95"></div>
-            </div>
-          </div>
-          <div class="skill-row">
-            <div class="flex justify-between mb-3">
-              <span class="font-label-md text-on-surface">Digitalization & Strategic Planning</span>
-              <span class="skill-pct font-label-sm text-primary-container">0%</span>
-            </div>
-            <div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
-              <div class="skill-bar-fill h-full bg-primary-container" data-pct="92"></div>
-            </div>
-          </div>
-          <div class="skill-row">
-            <div class="flex justify-between mb-3">
-              <span class="font-label-md text-on-surface">Business Analysis</span>
-              <span class="skill-pct font-label-sm text-primary-container">0%</span>
-            </div>
-            <div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
-              <div class="skill-bar-fill h-full bg-primary-container" data-pct="90"></div>
-            </div>
-          </div>
-          <div class="skill-row">
-            <div class="flex justify-between mb-3">
-              <span class="font-label-md text-on-surface">Cybersecurity & Compliance</span>
-              <span class="skill-pct font-label-sm text-primary-container">0%</span>
-            </div>
-            <div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
-              <div class="skill-bar-fill h-full bg-primary-container" data-pct="88"></div>
-            </div>
-          </div>
-          <div class="skill-row">
-            <div class="flex justify-between mb-3">
-              <span class="font-label-md text-on-surface">Team Leadership</span>
-              <span class="skill-pct font-label-sm text-primary-container">0%</span>
-            </div>
-            <div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
-              <div class="skill-bar-fill h-full bg-primary-container" data-pct="85"></div>
-            </div>
+          <div class="avail-box">
+            <span class="pulse-dot"></span>
+            <span>Open for <strong>Consulting</strong> &amp; Advisory Projects</span>
           </div>
         </div>
 
-        <div class="mt-10 pt-10 border-t border-outline-variant">
-          <h4 class="font-label-sm uppercase tracking-widest text-on-surface-variant mb-6">Software</h4>
-          <div class="grid grid-cols-3 gap-4">
-            <div class="flex flex-col items-center gap-2"><div class="sw-icon w-12 h-12 p-2 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center"><img alt="Salesforce" class="w-full h-full object-contain" src="assets/images/salesforce.png"></div><span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Salesforce</span></div>
-            <div class="flex flex-col items-center gap-2"><div class="sw-icon w-12 h-12 p-2 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center"><img alt="Aliyun" class="w-full h-full object-contain" src="assets/images/aliyun.png"></div><span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Aliyun</span></div>
-            <div class="flex flex-col items-center gap-2"><div class="sw-icon w-12 h-12 p-2 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center"><img alt="Office" class="w-full h-full object-contain" src="assets/images/office.png"></div><span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Office</span></div>
-            <div class="flex flex-col items-center gap-2"><div class="sw-icon w-12 h-12 p-2 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center"><img alt="Github" class="w-full h-full object-contain" src="assets/images/github.png"></div><span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Github</span></div>
-            <div class="flex flex-col items-center gap-2"><div class="sw-icon w-12 h-12 p-2 bg-surface-container-low rounded-lg border border-outline-variant flex items-center justify-center"><img alt="AI" class="w-full h-full object-contain" src="assets/images/AI.png"></div><span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">AI</span></div>
+        <div class="hero-media">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="portrait">
+            <img src="assets/images/1.png" alt="Portrait of Tidus Wang">
           </div>
-        </div>
-
-        <div class="mt-10 pt-10 border-t border-outline-variant">
-          <div class="flex items-center justify-between mb-6">
-            <h3 class="font-label-sm uppercase tracking-widest text-on-surface-variant">Professionalism</h3>
-            <span class="material-symbols-outlined text-primary-container">psychology</span>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-on-surface-variant bg-surface-container-low">WeChat Mini Program</span>
-            <span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-on-surface-variant bg-surface-container-low">Salesforce on Alibaba</span>
-            <span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-on-surface-variant bg-surface-container-low">CRM</span>
-            <span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-on-surface-variant bg-surface-container-low">Cybersecurity (MLPS/PIPL)</span>
-            <span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-on-surface-variant bg-surface-container-low">Data Platform</span>
-            <span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-on-surface-variant bg-surface-container-low">AI / GAI</span>
-            <span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-on-surface-variant bg-surface-container-low">eCommerce</span>
-            <span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-on-surface-variant bg-surface-container-low">Omnichannel</span>
-            <span class="px-4 py-2 border border-outline-variant rounded-full font-label-sm text-on-surface-variant bg-surface-container-low">POS</span>
-          </div>
-          <div class="mt-8 pt-4 border-t border-outline-variant flex items-center gap-3">
-            <span class="material-symbols-outlined text-primary-container text-lg">verified</span>
-            <span class="font-label-md text-on-surface-variant">12+ Years Experience</span>
-          </div>
+          <span class="hero-tag">LVMH Watch &amp; Jewellery</span>
         </div>
       </div>
     </section>
 
-    <!-- Certifications -->
-    <section class="mb-16 reveal" id="certifications">
-      <div class="flex items-center gap-3 mb-8">
-        <span class="material-symbols-outlined text-primary-container">workspace_premium</span>
-        <h3 class="font-headline-sm text-primary-container">Certifications</h3>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="tilt-card p-4 border-l-4 border-outline-variant bg-surface-container-low card-shadow rounded-r-lg flex items-center gap-4" data-tilt>
-          <div class="tilt-inner w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-container/10 rounded-lg"><span class="material-symbols-outlined text-primary-container text-2xl">workspace_premium</span></div>
-          <div><h4 class="font-label-md text-primary-container mb-0.5">PMP®</h4><p class="text-xs text-on-surface-variant italic">Project Management Institute</p></div>
+    <!-- Services -->
+    <section class="section section-alt">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">What I Do</span>
+          <span class="section-note">Solving problems with delivery</span>
         </div>
-        <div class="tilt-card p-4 border-l-4 border-outline-variant bg-surface-container-low card-shadow rounded-r-lg flex items-center gap-4" data-tilt>
-          <div class="tilt-inner w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-container/10 rounded-lg"><span class="material-symbols-outlined text-primary-container text-2xl">workspace_premium</span></div>
-          <div><h4 class="font-label-md text-primary-container mb-0.5">ITIL Foundation</h4><p class="text-xs text-on-surface-variant italic">AXELOS</p></div>
-        </div>
-        <div class="tilt-card p-4 border-l-4 border-outline-variant bg-surface-container-low card-shadow rounded-r-lg flex items-center gap-4" data-tilt>
-          <div class="tilt-inner w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-container/10 rounded-lg"><span class="material-symbols-outlined text-primary-container text-2xl">workspace_premium</span></div>
-          <div><h4 class="font-label-md text-primary-container mb-0.5">PRINCE2™</h4><p class="text-xs text-on-surface-variant italic">AXELOS</p></div>
-        </div>
-        <div class="tilt-card p-4 border-l-4 border-outline-variant bg-surface-container-low card-shadow rounded-r-lg flex items-center gap-4" data-tilt>
-          <div class="tilt-inner w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-container/10 rounded-lg"><span class="material-symbols-outlined text-primary-container text-2xl">workspace_premium</span></div>
-          <div><h4 class="font-label-md text-primary-container mb-0.5">PMI-ACP®</h4><p class="text-xs text-on-surface-variant italic">Project Management Institute</p></div>
-        </div>
-        <div class="tilt-card p-4 border-l-4 border-outline-variant bg-surface-container-low card-shadow rounded-r-lg flex items-center gap-4" data-tilt>
-          <div class="tilt-inner w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-container/10 rounded-lg"><span class="material-symbols-outlined text-primary-container text-2xl">workspace_premium</span></div>
-          <div><h4 class="font-label-md text-primary-container mb-0.5">Certified ScrumMaster®</h4><p class="text-xs text-on-surface-variant italic">Scrum Alliance</p></div>
-        </div>
-        <div class="tilt-card p-4 border-l-4 border-outline-variant bg-surface-container-low card-shadow rounded-r-lg flex items-center gap-4" data-tilt>
-          <div class="tilt-inner w-12 h-12 flex-shrink-0 flex items-center justify-center bg-primary-container/10 rounded-lg"><span class="material-symbols-outlined text-primary-container text-2xl">workspace_premium</span></div>
-          <div><h4 class="font-label-md text-primary-container mb-0.5">Certified Information Security Manager®</h4><p class="text-xs text-on-surface-variant italic">ISACA</p></div>
+        <div class="service-grid">
+          <article class="card reveal">
+            <div class="card-num">
+              <span>01</span>
+              <span class="glyph">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+              </span>
+            </div>
+            <h3>Project &amp; Delivery</h3>
+            <p>Cross-brand IS&amp;T planning, budgeting, governance and delivery across Greater China.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-num">
+              <span>02</span>
+              <span class="glyph">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3.5"/></svg>
+              </span>
+            </div>
+            <h3>Digitalization &amp; AI</h3>
+            <p>Data platforms, CRM, eCommerce and AI/GAI adoption that move measurable business metrics.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-num">
+              <span>03</span>
+              <span class="glyph">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.5v5c0 5-3.8 8.3-9 10.5C6.8 19.8 3 16.5 3 11.5v-5z"/><path d="M9 12l2 2 4-4"/></svg>
+              </span>
+            </div>
+            <h3>Security &amp; Compliance</h3>
+            <p>MLPS, PIPL and cross-border data programs designed for multi-brand groups.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-num">
+              <span>04</span>
+              <span class="glyph">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+              </span>
+            </div>
+            <h3>Retail &amp; Omnichannel</h3>
+            <p>POS, retail rollout support and omnichannel platforms built to scale across brands.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Education -->
-    <section class="mb-16 reveal" id="education">
-      <div class="flex items-center gap-3 mb-8">
-        <span class="material-symbols-outlined text-primary-container">school</span>
-        <h3 class="font-headline-sm text-primary-container">Education</h3>
-      </div>
-      <div class="space-y-6">
-        <div class="tilt-card p-6 border-l-4 border-primary-container bg-surface-container-low card-shadow rounded-r-lg" data-tilt>
-          <div class="tilt-inner">
-            <h4 class="font-headline-sm text-primary-container text-lg mb-1">Master of Business Administrator (MBA)</h4>
-            <p class="font-body-md text-on-surface-variant italic">Grenoble IAE</p>
-            <span class="font-label-sm text-primary-fixed-variant mt-2 block">2017 — 2018</span>
-          </div>
+    <!-- Selected Impact -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Selected Impact</span>
+          <span class="section-note">Programs that shipped</span>
         </div>
-        <div class="tilt-card p-6 border-l-4 border-outline-variant bg-surface-container-low card-shadow rounded-r-lg" data-tilt>
-          <div class="tilt-inner">
-            <h4 class="font-headline-sm text-primary-container text-lg mb-1">Electronic Information Science and Technology</h4>
-            <p class="font-body-md text-on-surface-variant italic">Fudan University</p>
-            <span class="font-label-sm text-primary-fixed-variant mt-2 block">2011 — 2016</span>
-          </div>
+        <div class="work-grid">
+          <article class="card work-card reveal">
+            <div class="work-cover">
+              <div class="cover-bg cover-a">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5v.01M10.5 6.5v.01"/></svg>
+                <span class="cover-label">Digital Solutions</span>
+              </div>
+            </div>
+            <div class="work-meta">
+              <span class="num">01</span>
+              <span class="scope">2019 - Present</span>
+            </div>
+            <h3>LVMH Digital Solutions</h3>
+            <p>CRM and eCommerce solutions for Watch &amp; Jewellery brands, delivered across the China market.</p>
+            <span class="work-arrow">View scope
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </span>
+          </article>
+
+          <article class="card work-card reveal">
+            <div class="work-cover">
+              <div class="cover-bg cover-b">
+                <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h13v3H8v13"/><path d="M8 8h12v11H8z"/><path d="M11 12h6M11 15h4"/></svg>
+                <span class="cover-label">Data &amp; AI</span>
+              </div>
+            </div>
+            <div class="work-meta">
+              <span class="num">02</span>
+              <span class="scope">Group Level</span>
+            </div>
+            <h3>Data &amp; AI Platform</h3>
+            <p>Group-level data platform and AI/GAI capabilities iteratively built for five global brands.</p>
+            <span class="work-arrow">View scope
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </span>
+          </article>
+
+          <article class="card work-card reveal">
+            <div class="work-cover">
+              <div class="cover-bg cover-c">
+                <svg viewBox="0 0 24 24"><path d="M12 2l9 4.5v5c0 5-3.8 8.3-9 10.5C6.8 19.8 3 16.5 3 11.5v-5z"/><path d="M9 12l2 2 4-4"/></svg>
+                <span class="cover-label">Compliance</span>
+              </div>
+            </div>
+            <div class="work-meta">
+              <span class="num">03</span>
+              <span class="scope">Greater China</span>
+            </div>
+            <h3>Security Compliance</h3>
+            <p>Cybersecurity compliance at group scale - MLPS, PIPL and cross-border data transfer programs.</p>
+            <span class="work-arrow">View scope
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            </span>
+          </article>
         </div>
-        <div class="tilt-card p-6 border-l-4 border-outline-variant bg-surface-container-low card-shadow rounded-r-lg" data-tilt>
-          <div class="tilt-inner">
-            <h4 class="font-headline-sm text-primary-container text-lg mb-1">Logistic Management</h4>
-            <p class="font-body-md text-on-surface-variant italic">Shanghai Institute of Xingzhi</p>
-            <span class="font-label-sm text-primary-fixed-variant mt-2 block">2004 — 2007</span>
+
+        <div class="stats-grid" style="margin-top:52px;">
+          <div class="card stat reveal">
+            <div class="stat-value" data-count="12" data-suffix="+">0</div>
+            <div class="stat-label">Years Delivering</div>
+          </div>
+          <div class="card stat reveal">
+            <div class="stat-value" data-count="5">0</div>
+            <div class="stat-label">Global Brands</div>
+          </div>
+          <div class="card stat reveal">
+            <div class="stat-value" data-count="6">0</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="card stat reveal">
+            <div class="stat-value" data-count="3">0</div>
+            <div class="stat-label">Companies</div>
           </div>
         </div>
       </div>
     </section>
-  </div>
-</div>
-</main>
 
-<!-- BottomNavBar -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_-4px_20px_rgba(0,33,71,0.05)] flex justify-around items-center px-4 pb-6 pt-3 border-t border-outline-variant">
-  <a class="flex flex-col items-center justify-center text-primary-container pt-1" href="#">
-    <span class="material-symbols-outlined fill-1">person</span>
-    <span class="text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant pt-1" href="#experience">
-    <span class="material-symbols-outlined">work</span>
-    <span class="text-[10px] font-bold uppercase tracking-widest mt-1">Experience</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant pt-1" href="#skills">
-    <span class="material-symbols-outlined">psychology</span>
-    <span class="text-[10px] font-bold uppercase tracking-widest mt-1">Skills</span>
-  </a>
-  <a class="flex flex-col items-center justify-center text-on-surface-variant pt-1" href="#education">
-    <span class="material-symbols-outlined">school</span>
-    <span class="text-[10px] font-bold uppercase tracking-widest mt-1">Education</span>
-  </a>
-</nav>
+    <!-- Experience + Skills -->
+    <section class="section section-alt" id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Career Path</span>
+          <span class="section-note">Retail tech to luxury digitalization</span>
+        </div>
 
-<!-- Footer -->
-<footer class="w-full mt-section-gap bg-surface-container">
-  <div class="flex flex-col md:flex-row justify-between items-center py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant">
-    <p class="font-label-sm text-on-surface-variant mb-6 md:mb-0">
-      © 2026 Professional Portfolio. All rights reserved.
-    </p>
-    <div class="flex gap-10">
-      <a class="font-label-sm font-semibold text-primary-container hover:text-primary transition-all tracking-widest" href="#">LINKEDIN</a>
-      <a class="font-label-sm font-semibold text-primary-container hover:text-primary transition-all tracking-widest" href="#">GITHUB</a>
-      <a class="font-label-sm font-semibold text-primary-container hover:text-primary transition-all tracking-widest" href="#">EMAIL</a>
+        <div class="layout-2col">
+          <div class="timeline">
+            <article class="card job reveal">
+              <div class="job-top">
+                <h3>GC IS&amp;T Project Manager</h3>
+                <span class="job-period">2019 - Present</span>
+              </div>
+              <p class="job-company">LVMH Watch &amp; Jewellery (Shanghai) Commercial Co., Ltd.</p>
+              <ul>
+                <li>Lead IS&amp;T project management and delivery across Greater China markets.</li>
+                <li>Collaborate with brand HQs, group IT and internal/external stakeholders.</li>
+                <li>Drive cybersecurity compliance: MLPS, PIPL, cross-border data transfer.</li>
+                <li>Spearhead China digitalization - CRM, eCommerce and new digital solutions.</li>
+                <li>Build, integrate and enhance the Data Platform and AI technology.</li>
+              </ul>
+            </article>
+
+            <article class="card job reveal">
+              <div class="job-top">
+                <h3>Assistant Manager - Retail &amp; eCom IT</h3>
+                <span class="job-period">2014 - 2019</span>
+              </div>
+              <p class="job-company">Puma China Ltd.</p>
+              <ul>
+                <li>Led the functional team supporting retail and eCommerce operations.</li>
+                <li>Oversaw IT delivery for store openings, refits and closures.</li>
+                <li>Translated operational opportunities into prioritized change projects.</li>
+                <li>Built training programs to raise system skills across the business.</li>
+                <li>Set performance and development plans for direct reports.</li>
+              </ul>
+            </article>
+
+            <article class="card job reveal">
+              <div class="job-top">
+                <h3>Business Analyst, IT Department</h3>
+                <span class="job-period">2007 - 2014</span>
+              </div>
+              <p class="job-company">Adidas Greater China</p>
+              <ul>
+                <li>Supported 30+ backend users and 110+ retail stores.</li>
+                <li>Participated in 10+ global projects: POS, CRM, BI, eCommerce.</li>
+                <li>Owned system analysis, requirement collection, UAT and training.</li>
+                <li>Coordinated cross-functional rollouts with retail, finance and marketing.</li>
+                <li>Led localization projects including CMS and retail mobile solutions.</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside class="side">
+            <div class="card side-card reveal" id="skills">
+              <h3>Expertise</h3>
+              <div class="skill-row">
+                <div class="skill-top"><span>Project &amp; Delivery Management</span><span class="pct">95%</span></div>
+                <div class="bar"><div class="bar-fill" data-pct="95"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-top"><span>Digitalization &amp; Strategy</span><span class="pct">92%</span></div>
+                <div class="bar"><div class="bar-fill" data-pct="92"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-top"><span>Business Analysis</span><span class="pct">90%</span></div>
+                <div class="bar"><div class="bar-fill" data-pct="90"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-top"><span>Security &amp; Compliance</span><span class="pct">88%</span></div>
+                <div class="bar"><div class="bar-fill" data-pct="88"></div></div>
+              </div>
+              <div class="skill-row">
+                <div class="skill-top"><span>Team Leadership</span><span class="pct">85%</span></div>
+                <div class="bar"><div class="bar-fill" data-pct="85"></div></div>
+              </div>
+
+              <div class="tools">
+                <div class="tool"><span class="tool-tile">SF</span>Salesforce</div>
+                <div class="tool"><span class="tool-tile">AL</span>Aliyun</div>
+                <div class="tool"><span class="tool-tile">O365</span>Office 365</div>
+                <div class="tool"><span class="tool-tile">GH</span>GitHub</div>
+                <div class="tool"><span class="tool-tile">AI</span>AI Tools</div>
+              </div>
+            </div>
+
+            <div class="card side-card reveal">
+              <h3>Professional Focus</h3>
+              <div class="tag-wrap">
+                <span class="tag">WeChat Mini Program</span>
+                <span class="tag">Salesforce on Alibaba Cloud</span>
+                <span class="tag">CRM</span>
+                <span class="tag">Cybersecurity (MLPS/PIPL)</span>
+                <span class="tag">Data Platform</span>
+                <span class="tag">AI / GAI</span>
+                <span class="tag">eCommerce</span>
+                <span class="tag">Omnichannel</span>
+                <span class="tag">POS</span>
+              </div>
+            </div>
+
+            <div class="card side-card reveal" id="credentials">
+              <h3>Certifications</h3>
+              <div class="tag-wrap">
+                <span class="tag">PMP - PMI</span>
+                <span class="tag">ITIL Foundation</span>
+                <span class="tag">PRINCE2</span>
+                <span class="tag">PMI-ACP</span>
+                <span class="tag">Certified ScrumMaster</span>
+                <span class="tag">CISM - ISACA</span>
+              </div>
+            </div>
+
+            <div class="card side-card reveal">
+              <h3>Education</h3>
+              <div class="edu">
+                <h4>Master of Business Administration (MBA)</h4>
+                <p class="school">Grenoble IAE</p>
+                <span class="years">2017 - 2018</span>
+              </div>
+              <div class="edu" style="border-top:1px solid var(--line);">
+                <h4>Electronic Information Science &amp; Technology</h4>
+                <p class="school">Fudan University</p>
+                <span class="years">2011 - 2016</span>
+              </div>
+              <div class="edu" style="border-top:1px solid var(--line);">
+                <h4>Logistics Management</h4>
+                <p class="school">Shanghai Institute of Xingzhi</p>
+                <span class="years">2004 - 2007</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section cta" id="contact">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow" style="color:#9aa496;">Let's work together</span>
+          <h2>Have a project<br><span class="accent">in mind?</span></h2>
+          <p>I am always open to discussing new programs, transformation roadmaps, or advisory engagements - across retail, luxury, and enterprise technology.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn" href="mailto:hello@tiduswang.com">
+            Get in touch
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
+          </a>
+          <div class="contact-list">
+            <a class="contact-item" href="https://github.com/TidusWL" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/></svg>
+              <span>
+                <span class="label">GitHub</span>
+                github.com/TidusWL
+              </span>
+            </a>
+            <a class="contact-item" href="mailto:hello@tiduswang.com">
+              <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
+              <span>
+                <span class="label">Email</span>
+                hello@tiduswang.com
+              </span>
+            </a>
+            <span class="contact-item">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+              <span>
+                <span class="label">Location</span>
+                Shanghai, China - Remote Friendly
+              </span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>&copy; <span id="year">2026</span> Tidus Wang. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="https://github.com/TidusWL" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:korosaki1@live.com">Email</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-  // 1. Hero title — character-by-character reveal
-  (function splitTitle() {
-    const el = document.getElementById('heroTitle');
-    if (!el) return;
-    const text = el.textContent;
-    el.textContent = '';
-    [...text].forEach((ch, i) => {
-      const span = document.createElement('span');
-      span.className = 'char';
-      span.textContent = ch === ' ' ? '\u00A0' : ch;
-      span.style.animationDelay = (0.3 + i * 0.04) + 's';
-      el.appendChild(span);
-    });
-  })();
+  <script>
+    (function () {
+      var header = document.getElementById('siteHeader');
+      var menuBtn = document.getElementById('menuBtn');
+      var nav = document.getElementById('mainNav');
 
-  // 2. Hero paragraph — word-by-word reveal
-  (function splitPara() {
-    const el = document.getElementById('heroPara');
-    if (!el) return;
-    const words = el.textContent.trim().split(/(\s+)/);
-    el.textContent = '';
-    let wordIdx = 0;
-    words.forEach((w) => {
-      if (/^\s+$/.test(w)) {
-        el.appendChild(document.createTextNode(w));
-      } else {
-        const span = document.createElement('span');
-        span.className = 'word';
-        span.textContent = w;
-        span.style.animationDelay = (1.4 + wordIdx * 0.03) + 's';
-        el.appendChild(span);
-        wordIdx++;
+      function onScroll() {
+        if (window.scrollY > 8) header.classList.add('is-scrolled');
+        else header.classList.remove('is-scrolled');
       }
-    });
-  })();
 
-  // 3. Scroll reveal (IntersectionObserver)
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  reveals.forEach(el => io.observe(el));
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
 
-  // 4. Skill bars + count-up — fallback for already-visible
-  function animateSkills() {
-    const bars = document.querySelectorAll('.skill-bar-fill');
-    bars.forEach((bar, i) => {
-      const pct = parseInt(bar.dataset.pct, 10);
-      const row = bar.closest('.skill-row');
-      const pctEl = row ? row.querySelector('.skill-pct') : null;
-      // skip if already filled
-      if (bar.dataset.done === '1') return;
-      bar.dataset.done = '1';
-      setTimeout(() => {
-        bar.style.width = pct + '%';
-        if (pctEl) {
-          const start = performance.now();
-          const dur = 1800;
-          function tick(now) {
-            const t = Math.min(1, (now - start) / dur);
-            const eased = 1 - Math.pow(1 - t, 3);
-            pctEl.textContent = Math.round(pct * eased) + '%';
-            if (t < 1) requestAnimationFrame(tick);
-          }
-          requestAnimationFrame(tick);
+      menuBtn.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          nav.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
         }
-      }, i * 150);
-    });
-  }
+      });
 
-  const skillsBars = document.getElementById('skills-bars');
-  if (skillsBars) {
-    const rect = skillsBars.getBoundingClientRect();
-    const inView = rect.top < window.innerHeight && rect.bottom > 0;
-    if (inView) {
-      // Skills already visible on load — animate immediately
-      animateSkills();
-    } else {
-      const skillObs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            animateSkills();
-            skillObs.unobserve(e.target);
+      // Scroll reveal
+      var reveals = document.querySelectorAll('.reveal');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.3 });
-      skillObs.observe(skillsBars);
-    }
-  }
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  // 5. 3D Tilt (mouse-tracked)
-  document.querySelectorAll('[data-tilt]').forEach(card => {
-    let raf = null;
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-      const rotY = (x - 0.5) * 8;
-      const rotX = -(y - 0.5) * 8;
-      if (raf) cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-      });
-    });
-    card.addEventListener('mouseleave', () => {
-      if (raf) cancelAnimationFrame(raf);
-      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-    });
-  });
+      reveals.forEach(function (el) { io.observe(el); });
 
-  // 6. Sticky header shadow on scroll
-  const topbar = document.getElementById('topbar');
-  window.addEventListener('scroll', () => {
-    if (!topbar) return;
-    if (window.scrollY > 8) topbar.classList.add('is-scrolled');
-    else topbar.classList.remove('is-scrolled');
-  }, { passive: true });
+      // Animate skill bars when visible
+      var bars = document.querySelectorAll('.bar-fill');
+      var barIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var bar = entry.target;
+            requestAnimationFrame(function () {
+              bar.style.width = bar.dataset.pct + '%';
+            });
+            barIO.unobserve(bar);
+          }
+        });
+      }, { threshold: 0.4 });
 
-  // 7. Active nav highlight
-  const sections = ['experience', 'skills', 'education'];
-  const navLinks = document.querySelectorAll('nav a');
-  const desktopLinks = document.querySelectorAll('header nav a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      const el = document.getElementById(s);
-      if (el && window.scrollY >= el.offsetTop - 150) current = s;
-    });
-    const update = (links) => links.forEach(link => {
-      link.classList.remove('text-primary-container', 'font-bold');
-      link.classList.add('text-on-surface-variant');
-      if (link.getAttribute('href') && link.getAttribute('href').includes(current)) {
-        link.classList.remove('text-on-surface-variant');
-        link.classList.add('text-primary-container', 'font-bold');
-      }
-    });
-    update(navLinks);
-    update(desktopLinks);
-  }, { passive: true });
-</script>
+      bars.forEach(function (bar) { barIO.observe(bar); });
+
+      // Count-up stats
+      var counters = document.querySelectorAll('[data-count]');
+      var counterIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          var target = parseInt(el.dataset.count, 10);
+          var suffix = el.dataset.suffix || '';
+          var dur = 1400;
+          var start = null;
+
+          function tick(now) {
+            if (!start) start = now;
+            var t = Math.min(1, (now - start) / dur);
+            var eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = Math.round(target * eased) + suffix;
+            if (t < 1) requestAnimationFrame(tick);
+          }
+
+          requestAnimationFrame(tick);
+          counterIO.unobserve(el);
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(function (el) { counterIO.observe(el); });
+
+      // Active nav link
+      var sections = ['experience', 'skills', 'credentials', 'contact'];
+      var links = nav.querySelectorAll('a');
+
+      window.addEventListener('scroll', function () {
+        var current = '';
+        sections.forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el && window.scrollY >= el.offsetTop - 120) current = id;
+        });
+        links.forEach(function (link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
+      }, { passive: true });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>
