@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
+      --u: min(0.069444vw, 1px);
       --lime: #a3e635;
       --lime-strong: #84cc16;
       --lime-soft: #eef9d8;
@@ -164,14 +165,36 @@
     }
 
     .main-nav {
+      position: relative;
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 4px;
+      padding: 5px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+
+    .nav-pill-ind {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      background: var(--ink);
+      border-radius: 999px;
+      opacity: 0;
+      z-index: 0;
+      pointer-events: none;
+      transition: left .32s var(--ease), width .32s var(--ease), top .32s var(--ease), height .32s var(--ease), opacity .25s var(--ease);
     }
 
     .main-nav a {
       position: relative;
-      font-size: 12px;
+      z-index: 1;
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -179,25 +202,12 @@
       transition: color .25s var(--ease);
     }
 
-    .main-nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 0;
-      height: 2px;
-      background: var(--lime-strong);
-      transition: width .35s var(--ease);
-    }
-
-    .main-nav a:hover,
-    .main-nav a.active {
+    .main-nav a:hover {
       color: var(--ink);
     }
 
-    .main-nav a:hover::after,
-    .main-nav a.active::after {
-      width: 100%;
+    .main-nav a.active {
+      color: #fff;
     }
 
     .header-year {
@@ -237,104 +247,245 @@
 
     /* ---------- Hero ---------- */
 
+    /* ---------- Hero (editorial) ---------- */
+
     .hero {
-      padding-top: 150px;
-      padding-bottom: 96px;
+      position: relative;
+      padding-top: 76px;
       overflow: hidden;
+      background: var(--bg);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr);
-      gap: 56px;
-      align-items: center;
+      grid-template-columns: minmax(0, 54fr) minmax(0, 46fr);
+      align-items: start;
+      gap: 24px;
+      padding-top: calc(52 * var(--u));
     }
+
+    .hero-copy { position: relative; z-index: 2; }
 
     .hero-title {
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: clamp(56px, 8.6vw, 118px);
-      line-height: .92;
-      letter-spacing: -.02em;
+      font-size: calc(84 * var(--u));
+      line-height: .86;
+      letter-spacing: -.055em;
       text-transform: uppercase;
-      margin: 28px 0 30px;
+      margin: calc(24 * var(--u)) 0 calc(30 * var(--u));
+    }
+
+    .line-mask {
+      display: block;
+      overflow: hidden;
+      padding-bottom: .05em;
     }
 
     .hero-title .line {
       display: block;
       opacity: 0;
-      transform: translateY(34%);
-      animation: lineUp .9s var(--ease) forwards;
+      transform: translateY(108%);
+      animation: lineUp .95s var(--ease) forwards;
     }
 
     .hero-title .line:nth-child(1) { animation-delay: .08s; }
     .hero-title .line:nth-child(2) { animation-delay: .2s; color: var(--lime-strong); }
     .hero-title .line:nth-child(3) { animation-delay: .32s; }
 
-    @keyframes lineUp {
-      to { opacity: 1; transform: none; }
+    @keyframes lineUp { to { opacity: 1; transform: none; } }
+
+    .hero-year {
+      font-size: .16em;
+      letter-spacing: 0;
+      color: var(--lime-strong);
+      vertical-align: super;
+      margin-left: .3em;
     }
 
-    .hero-sub {
-      max-width: 560px;
-      font-size: 17px;
-      color: var(--muted);
-      margin-bottom: 34px;
-      opacity: 0;
-      animation: fadeUp .9s var(--ease) .5s forwards;
-    }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: none; }
-    }
-
-    .hero-badges {
+    .hero-about {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      gap: 14px;
+      max-width: calc(480 * var(--u));
       opacity: 0;
-      animation: fadeUp .9s var(--ease) .62s forwards;
+      transform: translateY(14px);
+      animation: fadeUp .9s var(--ease) .45s forwards;
     }
 
-    .chip {
+    @keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+    .about-mark {
+      flex: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--lime-strong);
+      padding-top: 3px;
+      white-space: nowrap;
+    }
+
+    .hero-about p {
+      font-size: calc(13.5 * var(--u));
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .hero-cta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 9px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--card);
-      font-size: 12px;
-      font-weight: 600;
+      margin-top: calc(26 * var(--u));
+      padding: calc(14 * var(--u)) calc(22 * var(--u));
+      background: var(--lime);
+      color: var(--ink);
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-size: calc(13 * var(--u));
+      font-weight: 700;
       letter-spacing: .06em;
-      color: var(--muted);
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp .9s var(--ease) .55s forwards;
+      transition: box-shadow .25s var(--ease), translate .25s var(--ease);
     }
 
-    .chip svg {
+    .hero-cta:hover {
+      translate: 0 -1px;
+      box-shadow: 0 14px 30px rgba(132, 204, 22, .35);
+    }
+
+    .hero-cta svg {
       width: 14px;
       height: 14px;
-      stroke: var(--lime-strong);
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
-    .avail-box {
-      margin-top: 30px;
+    .stats-frame {
+      margin-top: calc(46 * var(--u));
+      margin-bottom: calc(48 * var(--u));
+      width: calc(360 * var(--u));
+      max-width: 100%;
+      padding: 10px;
+      display: grid;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #e4e7df;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp .9s var(--ease) .65s forwards;
+    }
+
+    .sf-dark {
+      background: var(--ink);
+      color: #f4f4f4;
+      border-radius: 9px;
+      padding: calc(18 * var(--u));
+    }
+
+    .sf-num {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: calc(46 * var(--u));
+      line-height: 1;
+    }
+
+    .sf-label {
+      margin-top: 6px;
+      font-size: 10.5px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(244, 244, 244, .62);
+    }
+
+    .sf-marks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      margin: calc(14 * var(--u)) 0;
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(244, 244, 244, .48);
+    }
+
+    .sf-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--lime);
+      color: var(--ink);
+      border-radius: 7px;
+      padding: calc(10 * var(--u)) calc(12 * var(--u));
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: box-shadow .25s var(--ease);
+    }
+
+    .sf-bar:hover { box-shadow: 0 8px 20px rgba(132, 204, 22, .4); }
+
+    .hero-figure {
+      position: relative;
+      height: calc(830 * var(--u));
+      min-height: 520px;
+    }
+
+    .fig-drift {
+      position: absolute;
+      inset: 0;
+      will-change: transform;
+      opacity: 0;
+      animation: figIn 1.3s var(--ease) .15s forwards;
+    }
+
+    @keyframes figIn {
+      from { opacity: 0; transform: translateY(40px); filter: blur(12px); }
+      to { opacity: 1; transform: none; filter: blur(0); }
+    }
+
+    .fig-img {
+      position: absolute;
+      right: calc(-2 * var(--u));
+      top: calc(-36 * var(--u));
+      width: calc(611 * var(--u));
+      height: calc(819 * var(--u));
+      max-width: none;
+      object-fit: cover;
+      object-position: top center;
+      -webkit-mask-image: radial-gradient(ellipse 58% 74% at 50% 40%, #000 62%, transparent 82%);
+      mask-image: radial-gradient(ellipse 58% 74% at 50% 40%, #000 62%, transparent 82%);
+    }
+
+    .avail-pill {
+      position: absolute;
+      top: calc(215 * var(--u));
+      right: 4%;
+      z-index: 3;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      padding: 12px 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--card);
-      box-shadow: 0 18px 40px rgba(16, 19, 14, .07);
-      font-size: 13px;
-      opacity: 0;
-      animation: fadeUp .9s var(--ease) .72s forwards;
-    }
-
-    .avail-box strong {
+      gap: 9px;
+      padding: calc(10 * var(--u)) calc(16 * var(--u));
+      background: rgba(255, 255, 255, .74);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(16, 19, 14, .08);
+      border-radius: 999px;
       font-family: var(--font-display);
-      color: var(--lime-strong);
-      font-weight: 700;
+      font-size: calc(12 * var(--u));
+      font-weight: 600;
+      letter-spacing: .04em;
+      box-shadow: 0 14px 34px rgba(16, 19, 14, .1);
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp .9s var(--ease) .8s forwards;
     }
 
     .pulse-dot {
@@ -344,6 +495,7 @@
       background: var(--lime-strong);
       box-shadow: 0 0 0 0 rgba(132, 204, 22, .55);
       animation: pulse 2.4s var(--ease) infinite;
+      flex: none;
     }
 
     @keyframes pulse {
@@ -351,93 +503,127 @@
       100% { box-shadow: 0 0 0 0 rgba(132, 204, 22, 0); }
     }
 
-    .hero-media {
-      position: relative;
+    .brand-plate {
+      position: absolute;
+      left: 50%;
+      top: calc(508 * var(--u));
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: calc(364 * var(--u));
+      max-width: 82%;
+      padding: calc(15 * var(--u)) calc(18 * var(--u));
+      background: rgba(16, 19, 14, .6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 11px;
+      color: #f4f4f4;
       opacity: 0;
-      animation: fadeUp 1s var(--ease) .55s forwards;
+      animation: plateIn 1s var(--ease) .95s forwards;
     }
 
-    .portrait {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      overflow: hidden;
-      border-radius: 10px;
-      background: #dfe3da;
-      box-shadow: 0 30px 70px rgba(16, 19, 14, .16);
+    @keyframes plateIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    .portrait img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .bp-mark { flex: none; display: grid; place-items: center; }
+    .bp-mark svg { width: calc(24 * var(--u)); height: calc(24 * var(--u)); }
+
+    .bp-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: calc(24 * var(--u));
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
-    .portrait::before {
-      content: "";
+    .bp-role {
+      margin-left: auto;
+      text-align: right;
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(244, 244, 244, .55);
+      line-height: 1.6;
+    }
+
+    .hero-logos {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 54px;
-      height: 54px;
-      border-top: 3px solid var(--lime);
-      border-right: 3px solid var(--lime);
-      border-radius: 0 10px 0 0;
+      left: 0;
+      right: 0;
+      bottom: calc(26 * var(--u));
       z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: calc(10 * var(--u)) calc(14 * var(--u));
+      font-family: var(--font-display);
+      font-size: calc(11.5 * var(--u));
+      font-weight: 600;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(16, 19, 14, .42);
+      opacity: 0;
+      animation: fadeUp .9s var(--ease) 1.05s forwards;
+      transform: translateY(14px);
     }
 
-    .ring {
-      position: absolute;
-      border: 2px solid rgba(132, 204, 22, .35);
+    .hero-logos em { font-style: normal; color: var(--lime-strong); }
+
+    .hero-bar {
+      height: calc(111 * var(--u));
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 0 4vw;
+      background: var(--ink);
+      color: #f4f4f4;
+      font-family: var(--font-display);
+      font-size: calc(12.5 * var(--u));
+      font-weight: 600;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      border-top: 1px solid rgba(255, 255, 255, .14);
+    }
+
+    .hero-bar em { font-style: normal; color: rgba(244, 244, 244, .45); }
+
+    .hb-mid {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #f4f4f4;
+    }
+
+    .hb-arrow {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .35);
       border-radius: 50%;
-      pointer-events: none;
+      font-size: 14px;
+      letter-spacing: 0;
+      transition: background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease);
     }
 
-    .ring-1 {
-      width: 74%;
-      height: 74%;
-      top: -36px;
-      right: -44px;
-      animation: spin 40s linear infinite;
-    }
-
-    .ring-2 {
-      width: 110px;
-      height: 110px;
-      bottom: -30px;
-      left: -34px;
-      border-style: dashed;
-      animation: spin 26s linear infinite reverse;
+    .hb-mid:hover .hb-arrow {
+      background: var(--lime);
+      color: var(--ink);
+      border-color: var(--lime);
     }
 
     @keyframes spin {
       to { transform: rotate(360deg); }
-    }
-
-    .hero-tag {
-      position: absolute;
-      bottom: 22px;
-      left: -16px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      background: var(--ink);
-      color: #fff;
-      border-radius: var(--radius);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      box-shadow: 0 14px 30px rgba(16, 19, 14, .22);
-    }
-
-    .hero-tag::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--lime);
     }
 
     /* ---------- General sections ---------- */
@@ -557,6 +743,31 @@
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
+    }
+
+    .work-cover .cover-scene {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      stroke: rgba(255, 255, 255, .85);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .work-cover .cover-scene .lime { stroke: #a3e635; }
+    .work-cover .cover-scene .fill-lime { fill: #a3e635; stroke: none; }
+    .work-cover .cover-scene .faint { stroke: rgba(255, 255, 255, .38); }
+
+    .cover-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
     }
 
     .work-cover .cover-label {
@@ -868,6 +1079,16 @@
       text-align: center;
     }
 
+    .tool-tile img {
+      width: 72%;
+      height: 72%;
+      object-fit: contain;
+    }
+
+    .tool-tile:has(img) {
+      background: #fff;
+    }
+
     .tool-tile {
       width: 44px;
       height: 44px;
@@ -1159,15 +1380,19 @@
 
     @media (max-width: 1024px) {
       .hero-grid { gap: 36px; }
+      .stats-frame { width: 100%; }
       .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .layout-2col { grid-template-columns: 1fr; }
       .side { position: static; }
-      .hero-media { max-width: 420px; }
-      .ring-1 { right: -26px; }
+      .hero-figure { height: calc(700 * var(--u)); }
     }
 
     @media (max-width: 900px) {
       .main-nav {
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        gap: 0;
         position: absolute;
         top: 76px;
         left: 0;
@@ -1193,7 +1418,14 @@
 
       .main-nav a {
         padding: 16px 24px;
+        border-radius: 0;
       }
+
+      .main-nav a.active {
+        color: var(--lime-strong);
+      }
+
+      .nav-pill-ind { display: none; }
 
       .header-year { display: none; }
 
@@ -1207,39 +1439,69 @@
     @media (max-width: 640px) {
       .wrap { width: min(100% - 32px, 1180px); }
 
-      .hero { padding-top: 122px; padding-bottom: 64px; }
+      .hero { padding-top: 76px; }
 
-      .hero-grid { grid-template-columns: 1fr; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        padding-top: 28px;
+      }
 
       .hero-title {
         font-size: clamp(46px, 13.5vw, 72px);
+        line-height: .92;
+        margin: 18px 0 22px;
       }
 
-      .hero-media {
-        max-width: 420px;
+      .hero-about { flex-direction: column; gap: 8px; }
+
+      .stats-frame { width: 100%; margin-bottom: 30px; }
+
+      .hero-figure {
+        height: auto;
+        min-height: 0;
+        margin-bottom: 40px;
+      }
+
+      .fig-drift { position: static; }
+
+      .fig-img {
+        position: static;
+        width: min(80vw, 360px);
+        height: min(80vw, 400px);
         margin-inline: auto;
-        width: 100%;
       }
 
-      .hero-tag { left: 10px; }
+      .avail-pill { top: 8px; right: 4%; font-size: 11px; padding: 8px 13px; }
+
+      .brand-plate {
+        top: auto;
+        bottom: 34px;
+        width: min(86vw, 380px);
+        padding: 12px 14px;
+      }
+
+      .bp-name { font-size: 18px; letter-spacing: .22em; }
+
+      .hero-logos {
+        position: static;
+        gap: 8px 12px;
+        font-size: 9px;
+        letter-spacing: .18em;
+        margin-top: 14px;
+      }
+
+      .hero-bar {
+        height: 60px;
+        padding: 0 20px;
+        font-size: 9px;
+        letter-spacing: .18em;
+      }
+
+      .hb-arrow { width: 26px; height: 26px; font-size: 12px; }
 
       .section { padding: 64px 0; }
 
       .service-grid { grid-template-columns: 1fr; }
-
-      .ring-1 {
-        width: 62%;
-        height: 62%;
-        top: -24px;
-        right: -14px;
-      }
-
-      .ring-2 {
-        width: 84px;
-        height: 84px;
-        bottom: -16px;
-        left: -14px;
-      }
 
       .section-head {
         flex-direction: column;
@@ -1295,42 +1557,50 @@
     <!-- Hero -->
     <section class="hero">
       <div class="wrap hero-grid">
-        <div>
+        <div class="hero-copy">
           <span class="eyebrow">Tech Delivery Leader - Greater China</span>
           <h1 class="hero-title">
-            <span class="line">Deliver</span>
-            <span class="line">Technology</span>
-            <span class="line">Impact.</span>
+            <span class="line-mask"><span class="line">Deliver</span></span>
+            <span class="line-mask"><span class="line">Technology<span class="hero-year">(&#8217;26)</span></span></span>
+            <span class="line-mask"><span class="line">Impact.</span></span>
           </h1>
-          <p class="hero-sub">
-            I lead IS&amp;T project delivery across luxury retail in China - planning,
-            governing and shipping digital solutions that work. 12+ years building and
-            running retail technology at adidas, PUMA, and LVMH Watch &amp; Jewellery.
-          </p>
-          <div class="hero-badges">
-            <span class="chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
-              Based in Shanghai
-            </span>
-            <span class="chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 5z"/><path d="M12 22c2.5-2.6 3.8-5.7 3.8-9S14.5 8.6 12 6c-2.5 2.6-3.8 5.7-3.8 9S9.5 21.4 12 22z"/></svg>
-              Working Worldwide
-            </span>
+          <div class="hero-about">
+            <span class="about-mark">&#9679; (About)</span>
+            <p>I lead IS&amp;T project delivery across luxury retail in China - planning, governing and shipping digital solutions that work. 12+ years building and running retail technology at adidas, PUMA, and LVMH Watch &amp; Jewellery.</p>
           </div>
-          <div class="avail-box">
-            <span class="pulse-dot"></span>
-            <span>Open for <strong>Consulting</strong> &amp; Advisory Projects</span>
+          <a class="hero-cta" href="#contact">Get in touch <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+          <div class="stats-frame">
+            <div class="sf-dark">
+              <div class="sf-num">12+</div>
+              <div class="sf-label">Years in retail technology</div>
+              <div class="sf-marks"><span>LVMH W&amp;J</span><span>PUMA</span><span>adidas</span></div>
+              <a class="sf-bar" href="#contact">Open for advisory <span aria-hidden="true">&#8599;</span></a>
+            </div>
           </div>
         </div>
 
-        <div class="hero-media">
-          <div class="ring ring-1"></div>
-          <div class="ring ring-2"></div>
-          <div class="portrait">
-            <img src="assets/images/1.png" alt="Portrait of Tidus Wang">
+        <div class="hero-figure">
+          <div class="fig-drift">
+            <img class="fig-img" src="assets/images/1.png" alt="Portrait of Tidus Wang">
           </div>
-          <span class="hero-tag">LVMH Watch &amp; Jewellery</span>
+          <div class="avail-pill"><span class="pulse-dot"></span> Available for you</div>
+          <div class="brand-plate">
+            <span class="bp-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#f4f4f4" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l8 9H4z"/><path d="M12 21l-8-9h16z"/></svg>
+            </span>
+            <span class="bp-name">Tidus Wang</span>
+            <span class="bp-role">IS&amp;T Project<br>Delivery Leader</span>
+          </div>
+          <div class="hero-logos">
+            <span>LVMH Watch &amp; Jewellery</span><em>&#9679;</em><span>PUMA China</span><em>&#9679;</em><span>adidas</span>
+          </div>
         </div>
+      </div>
+
+      <div class="hero-bar">
+        <span>Greater China <em>&#183; IS&amp;T</em></span>
+        <a class="hb-mid" href="#skills">Scroll down <span class="hb-arrow" aria-hidden="true">&#8595;</span></a>
+        <span>Shanghai <em>/ Worldwide</em></span>
       </div>
     </section>
 
@@ -1400,7 +1670,24 @@
           <article class="card work-card reveal">
             <div class="work-cover">
               <div class="cover-bg cover-a">
-                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5v.01M10.5 6.5v.01"/></svg>
+                <svg class="cover-scene" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect class="faint" x="26" y="18" width="348" height="214" rx="4"/>
+                  <line class="faint" x1="26" y1="196" x2="374" y2="196"/>
+                  <line x1="112" y1="18" x2="112" y2="44"/><circle cx="112" cy="52" r="7"/>
+                  <line x1="288" y1="18" x2="288" y2="38"/><circle class="lime" cx="288" cy="46" r="7"/>
+                  <path d="M84 196v-20h56v20"/><circle cx="112" cy="134" r="22"/>
+                  <path d="M106 108h12v-7h-12zM106 160h12v7h-12z"/>
+                  <line x1="112" y1="134" x2="112" y2="119"/><line x1="112" y1="134" x2="122" y2="139"/>
+                  <path d="M172 196v-24h56v24"/><circle class="lime" cx="200" cy="130" r="24"/>
+                  <path d="M194 102h12v-7h-12zM194 158h12v7h-12z"/>
+                  <line class="lime" x1="200" y1="130" x2="200" y2="113"/><line class="lime" x1="200" y1="130" x2="211" y2="136"/>
+                  <path d="M260 196v-20h56v20"/><circle cx="288" cy="134" r="22"/>
+                  <path d="M282 108h12v-7h-12zM282 160h12v7h-12z"/>
+                  <line x1="288" y1="134" x2="288" y2="121"/><line x1="288" y1="134" x2="297" y2="140"/>
+                  <circle class="lime" cx="330" cy="212" r="4"/>
+                  <path d="M60 212h44" class="faint"/>
+                </svg>
+                <img class="cover-photo" src="assets/images/impact-1.jpg" alt="" onerror="this.remove()">
                 <span class="cover-label">Digital Solutions</span>
               </div>
             </div>
@@ -1418,7 +1705,24 @@
           <article class="card work-card reveal">
             <div class="work-cover">
               <div class="cover-bg cover-b">
-                <svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 0 1 2-2h13v3H8v13"/><path d="M8 8h12v11H8z"/><path d="M11 12h6M11 15h4"/></svg>
+                <svg class="cover-scene" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <rect x="42" y="70" width="52" height="130" rx="4"/>
+                  <line x1="50" y1="90" x2="86" y2="90"/><line x1="50" y1="110" x2="86" y2="110"/><line x1="50" y1="130" x2="86" y2="130"/><line x1="50" y1="150" x2="86" y2="150"/><line x1="50" y1="170" x2="86" y2="170"/>
+                  <circle class="fill-lime" cx="80" cy="80" r="3"/><circle cx="80" cy="100" r="3"/><circle class="fill-lime" cx="80" cy="120" r="3"/><circle cx="80" cy="140" r="3"/><circle cx="80" cy="160" r="3"/>
+                  <rect x="106" y="94" width="44" height="106" rx="4"/>
+                  <line x1="113" y1="112" x2="143" y2="112"/><line x1="113" y1="132" x2="143" y2="132"/><line x1="113" y1="152" x2="143" y2="152"/><line x1="113" y1="172" x2="143" y2="172"/>
+                  <circle cx="137" cy="103" r="3"/><circle class="fill-lime" cx="137" cy="123" r="3"/><circle cx="137" cy="143" r="3"/><circle cx="137" cy="163" r="3"/>
+                  <path class="lime" d="M158 120C210 120 214 76 262 76"/>
+                  <path d="M158 148C216 148 220 128 268 128"/>
+                  <path d="M158 176C212 176 218 180 264 180"/>
+                  <circle cx="286" cy="76" r="10"/><circle cx="292" cy="128" r="10"/><circle class="lime" cx="288" cy="180" r="10"/>
+                  <line x1="296" y1="82" x2="304" y2="118" class="faint"/><line x1="302" y1="134" x2="300" y2="170" class="faint"/>
+                  <rect x="322" y="150" width="12" height="50"/>
+                  <rect class="lime" x="342" y="120" width="12" height="80"/>
+                  <rect x="362" y="164" width="12" height="36"/>
+                  <line class="faint" x1="316" y1="200" x2="380" y2="200"/>
+                </svg>
+                <img class="cover-photo" src="assets/images/impact-2.jpg" alt="" onerror="this.remove()">
                 <span class="cover-label">Data &amp; AI</span>
               </div>
             </div>
@@ -1436,7 +1740,25 @@
           <article class="card work-card reveal">
             <div class="work-cover">
               <div class="cover-bg cover-c">
-                <svg viewBox="0 0 24 24"><path d="M12 2l9 4.5v5c0 5-3.8 8.3-9 10.5C6.8 19.8 3 16.5 3 11.5v-5z"/><path d="M9 12l2 2 4-4"/></svg>
+                <svg class="cover-scene" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                  <path d="M200 46l58 26v38c0 34-24 55-58 68-34-13-58-34-58-68V72z"/>
+                  <path class="lime" d="M178 112l15 16 29-30"/>
+                  <circle cx="72" cy="64" r="7"/><circle cx="72" cy="150" r="7"/><circle cx="120" cy="212" r="7"/>
+                  <circle cx="328" cy="64" r="7"/><circle cx="328" cy="150" r="7"/><circle cx="280" cy="212" r="7"/>
+                  <line class="faint" x1="79" y1="68" x2="141" y2="90"/>
+                  <line class="faint" x1="79" y1="146" x2="140" y2="130"/>
+                  <line class="faint" x1="126" y1="205" x2="158" y2="172"/>
+                  <line class="faint" x1="321" y1="68" x2="259" y2="90"/>
+                  <line class="faint" x1="321" y1="146" x2="260" y2="130"/>
+                  <line class="faint" x1="274" y1="205" x2="242" y2="172"/>
+                  <path class="dash faint" d="M60 232c50-14 230-14 280 0"/>
+                  <path d="M332 226l10 6-10 6" class="faint"/>
+                  <rect x="36" y="96" width="34" height="42" rx="3"/>
+                  <line x1="43" y1="108" x2="63" y2="108"/><line x1="43" y1="118" x2="63" y2="118"/><line x1="43" y1="128" x2="57" y2="128"/>
+                  <rect x="330" y="96" width="34" height="42" rx="3"/>
+                  <line x1="337" y1="108" x2="357" y2="108"/><line x1="337" y1="118" x2="357" y2="118"/><line x1="337" y1="128" x2="351" y2="128"/>
+                </svg>
+                <img class="cover-photo" src="assets/images/impact-3.jpg" alt="" onerror="this.remove()">
                 <span class="cover-label">Compliance</span>
               </div>
             </div>
@@ -1554,11 +1876,11 @@
               </div>
 
               <div class="tools">
-                <div class="tool"><span class="tool-tile">SF</span>Salesforce</div>
-                <div class="tool"><span class="tool-tile">AL</span>Aliyun</div>
-                <div class="tool"><span class="tool-tile">O365</span>Office 365</div>
-                <div class="tool"><span class="tool-tile">GH</span>GitHub</div>
-                <div class="tool"><span class="tool-tile">AI</span>AI Tools</div>
+                <div class="tool"><span class="tool-tile"><img src="assets/images/salesforce.png" alt="Salesforce logo"></span>Salesforce</div>
+                <div class="tool"><span class="tool-tile"><img src="assets/images/aliyun.png" alt="Aliyun logo"></span>Aliyun</div>
+                <div class="tool"><span class="tool-tile"><img src="assets/images/office365.png" alt="Office 365 logo"></span>Office 365</div>
+                <div class="tool"><span class="tool-tile"><img src="assets/images/github.png" alt="GitHub logo"></span>GitHub</div>
+                <div class="tool"><span class="tool-tile"><img src="assets/images/AI.png" alt="AI Tools logo"></span>AI Tools</div>
               </div>
             </div>
 
@@ -1758,7 +2080,50 @@
         links.forEach(function (link) {
           link.classList.toggle('active', link.getAttribute('href') === '#' + current);
         });
+        syncPill(null);
       }, { passive: true });
+
+      // Editorial hero: figure drift
+      var figDrift = document.querySelector('.fig-drift');
+      var noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (figDrift && !noMotion) {
+        var driftQueued = false;
+        var doDrift = function () {
+          driftQueued = false;
+          var y = window.scrollY;
+          if (y < window.innerHeight * 1.4) {
+            figDrift.style.transform = 'translate3d(0,' + (y * 0.12).toFixed(1) + 'px,0)';
+          }
+        };
+        window.addEventListener('scroll', function () {
+          if (!driftQueued) { requestAnimationFrame(doDrift); driftQueued = true; }
+        }, { passive: true });
+      }
+
+      // Nav pill indicator
+      var navPill = document.createElement('span');
+      navPill.className = 'nav-pill-ind';
+      navPill.setAttribute('aria-hidden', 'true');
+      nav.appendChild(navPill);
+
+      function syncPill(hoverEl) {
+        if (window.innerWidth <= 900) { navPill.style.opacity = '0'; return; }
+        var el = hoverEl || nav.querySelector('a.active') || nav.querySelector('a');
+        if (!el) return;
+        navPill.style.opacity = '1';
+        navPill.style.left = el.offsetLeft + 'px';
+        navPill.style.top = el.offsetTop + 'px';
+        navPill.style.width = el.offsetWidth + 'px';
+        navPill.style.height = el.offsetHeight + 'px';
+      }
+
+      links.forEach(function (link) {
+        link.addEventListener('mouseenter', function () { syncPill(link); });
+      });
+      nav.addEventListener('mouseleave', function () { syncPill(null); });
+      window.addEventListener('resize', function () { syncPill(null); });
+      syncPill(null);
 
       document.getElementById('year').textContent = new Date().getFullYear();
     })();
