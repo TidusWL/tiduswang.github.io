@@ -464,30 +464,6 @@
       mask-image: radial-gradient(ellipse 58% 74% at 50% 40%, #000 62%, transparent 82%);
     }
 
-    .avail-pill {
-      position: absolute;
-      top: calc(215 * var(--u));
-      right: 4%;
-      z-index: 3;
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: calc(10 * var(--u)) calc(16 * var(--u));
-      background: rgba(255, 255, 255, .74);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(16, 19, 14, .08);
-      border-radius: 999px;
-      font-family: var(--font-display);
-      font-size: calc(12 * var(--u));
-      font-weight: 600;
-      letter-spacing: .04em;
-      box-shadow: 0 14px 34px rgba(16, 19, 14, .1);
-      opacity: 0;
-      transform: translateY(14px);
-      animation: fadeUp .9s var(--ease) .8s forwards;
-    }
-
     .pulse-dot {
       width: 10px;
       height: 10px;
@@ -506,7 +482,7 @@
     .brand-plate {
       position: absolute;
       left: 50%;
-      top: calc(508 * var(--u));
+      top: calc(546 * var(--u));
       transform: translateX(-50%);
       z-index: 3;
       display: flex;
@@ -515,12 +491,13 @@
       width: calc(364 * var(--u));
       max-width: 82%;
       padding: calc(15 * var(--u)) calc(18 * var(--u));
-      background: rgba(16, 19, 14, .6);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, .16);
-      border-radius: 11px;
-      color: #f4f4f4;
+      background: rgba(255, 255, 255, .74);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(16, 19, 14, .08);
+      border-radius: 999px;
+      color: var(--ink);
+      box-shadow: 0 14px 34px rgba(16, 19, 14, .1);
       opacity: 0;
       animation: plateIn 1s var(--ease) .95s forwards;
     }
@@ -549,7 +526,7 @@
       font-weight: 600;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: rgba(244, 244, 244, .55);
+      color: var(--muted);
       line-height: 1.6;
     }
 
@@ -1471,11 +1448,9 @@
         margin-inline: auto;
       }
 
-      .avail-pill { top: 8px; right: 4%; font-size: 11px; padding: 8px 13px; }
-
       .brand-plate {
         top: auto;
-        bottom: 34px;
+        bottom: 24px;
         width: min(86vw, 380px);
         padding: 12px 14px;
       }
@@ -1583,10 +1558,9 @@
           <div class="fig-drift">
             <img class="fig-img" src="assets/images/1.png" alt="Portrait of Tidus Wang">
           </div>
-          <div class="avail-pill"><span class="pulse-dot"></span> Available for you</div>
           <div class="brand-plate">
             <span class="bp-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#f4f4f4" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l8 9H4z"/><path d="M12 21l-8-9h16z"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l8 9H4z"/><path d="M12 21l-8-9h16z"/></svg>
             </span>
             <span class="bp-name">Tidus Wang</span>
             <span class="bp-role">IS&amp;T Project<br>Delivery Leader</span>
