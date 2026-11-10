@@ -31,16 +31,24 @@
 
     html { scroll-behavior: smooth; }
 
+    html { overflow-x: clip; }
+
     body {
       font-family: var(--font-body);
       background: var(--bg);
       color: var(--ink);
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     ::selection { background: var(--lime); color: var(--ink); }
+
+    :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+      transition: none;
+    }
 
     a { color: inherit; text-decoration: none; }
 
@@ -186,7 +194,7 @@
       opacity: 0;
       z-index: 0;
       pointer-events: none;
-      transition: left .32s var(--ease), width .32s var(--ease), top .32s var(--ease), height .32s var(--ease), opacity .25s var(--ease);
+      transition: opacity .25s var(--ease);
     }
 
     .main-nav a {
@@ -668,7 +676,7 @@
       color: var(--ink);
     }
 
-    .card h3 {
+    .card h2 {
       font-family: var(--font-display);
       font-size: 17px;
       font-weight: 700;
@@ -789,7 +797,7 @@
       border-radius: 999px;
     }
 
-    .work-card h3 {
+    .work-card h2 {
       font-family: var(--font-display);
       font-size: 18px;
       font-weight: 700;
@@ -845,6 +853,7 @@
     .stat-value {
       font-family: var(--font-display);
       font-weight: 700;
+      font-variant-numeric: tabular-nums;
       font-size: clamp(42px, 5vw, 64px);
       line-height: 1;
       color: var(--lime-strong);
@@ -916,7 +925,7 @@
       margin-bottom: 12px;
     }
 
-    .job-top h3 {
+    .job-top h2 {
       font-family: var(--font-display);
       font-size: 18px;
       font-weight: 700;
@@ -979,7 +988,7 @@
       padding: 26px;
     }
 
-    .side-card h3 {
+    .side-card h2 {
       font-family: var(--font-display);
       font-size: 15px;
       font-weight: 700;
@@ -991,7 +1000,7 @@
       gap: 10px;
     }
 
-    .side-card h3::before {
+    .side-card h2::before {
       content: "";
       width: 8px;
       height: 8px;
@@ -1028,11 +1037,13 @@
     }
 
     .bar-fill {
-      width: 0;
+      width: 100%;
       height: 100%;
       background: var(--lime-strong);
       border-radius: 3px;
-      transition: width 1.5s var(--ease);
+      transform-origin: left center;
+      transform: scaleX(0);
+      transition: transform 1.5s var(--ease);
     }
 
     .tools {
@@ -1127,10 +1138,10 @@
       place-items: center;
       border-radius: 50%;
       background: var(--lime-soft);
-      color: var(--lime-strong);
+      color: var(--ink);
     }
 
-    .credential h4 {
+    .credential h3 {
       font-size: 13px;
       font-weight: 700;
     }
@@ -1145,7 +1156,7 @@
       padding: 20px;
     }
 
-    .edu h4 {
+    .edu h3 {
       font-family: var(--font-display);
       font-size: 15px;
       font-weight: 700;
@@ -1590,10 +1601,10 @@
             <div class="card-num">
               <span>01</span>
               <span class="glyph">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                <svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
               </span>
             </div>
-            <h3>Project &amp; Delivery</h3>
+            <h2>Project &amp; Delivery</h2>
             <p>Cross-brand IS&amp;T planning, budgeting, governance and delivery across Greater China.</p>
           </article>
 
@@ -1601,10 +1612,10 @@
             <div class="card-num">
               <span>02</span>
               <span class="glyph">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3.5"/></svg>
+                <svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3.5"/></svg>
               </span>
             </div>
-            <h3>Digitalization &amp; AI</h3>
+            <h2>Digitalization &amp; AI</h2>
             <p>Data platforms, CRM, eCommerce and AI/GAI adoption that move measurable business metrics.</p>
           </article>
 
@@ -1612,10 +1623,10 @@
             <div class="card-num">
               <span>03</span>
               <span class="glyph">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.5v5c0 5-3.8 8.3-9 10.5C6.8 19.8 3 16.5 3 11.5v-5z"/><path d="M9 12l2 2 4-4"/></svg>
+                <svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 4.5v5c0 5-3.8 8.3-9 10.5C6.8 19.8 3 16.5 3 11.5v-5z"/><path d="M9 12l2 2 4-4"/></svg>
               </span>
             </div>
-            <h3>Security &amp; Compliance</h3>
+            <h2>Security &amp; Compliance</h2>
             <p>MLPS, PIPL and cross-border data programs designed for multi-brand groups.</p>
           </article>
 
@@ -1623,10 +1634,10 @@
             <div class="card-num">
               <span>04</span>
               <span class="glyph">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+                <svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
               </span>
             </div>
-            <h3>Retail &amp; Omnichannel</h3>
+            <h2>Retail &amp; Omnichannel</h2>
             <p>POS, retail rollout support and omnichannel platforms built to scale across brands.</p>
           </article>
         </div>
@@ -1669,10 +1680,10 @@
               <span class="num">01</span>
               <span class="scope">2019 - Present</span>
             </div>
-            <h3>LVMH Digital Solutions</h3>
+            <h2>LVMH Digital Solutions</h2>
             <p>CRM and eCommerce solutions for Watch &amp; Jewellery brands, delivered across the China market.</p>
             <span class="work-arrow">View scope
-              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
             </span>
           </article>
 
@@ -1704,10 +1715,10 @@
               <span class="num">02</span>
               <span class="scope">Group Level</span>
             </div>
-            <h3>Data &amp; AI Platform</h3>
+            <h2>Data &amp; AI Platform</h2>
             <p>Group-level data platform and AI/GAI capabilities iteratively built for five global brands.</p>
             <span class="work-arrow">View scope
-              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
             </span>
           </article>
 
@@ -1740,10 +1751,10 @@
               <span class="num">03</span>
               <span class="scope">Greater China</span>
             </div>
-            <h3>Security Compliance</h3>
+            <h2>Security Compliance</h2>
             <p>Cybersecurity compliance at group scale - MLPS, PIPL and cross-border data transfer programs.</p>
             <span class="work-arrow">View scope
-              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
             </span>
           </article>
         </div>
@@ -1781,7 +1792,7 @@
           <div class="timeline">
             <article class="card job reveal">
               <div class="job-top">
-                <h3>GC IS&amp;T Project Manager</h3>
+                <h2>GC IS&amp;T Project Manager</h2>
                 <span class="job-period">2019 - Present</span>
               </div>
               <p class="job-company">LVMH Watch &amp; Jewellery (Shanghai) Commercial Co., Ltd.</p>
@@ -1796,7 +1807,7 @@
 
             <article class="card job reveal">
               <div class="job-top">
-                <h3>Assistant Manager - Retail &amp; eCom IT</h3>
+                <h2>Assistant Manager - Retail &amp; eCom IT</h2>
                 <span class="job-period">2014 - 2019</span>
               </div>
               <p class="job-company">Puma China Ltd.</p>
@@ -1811,7 +1822,7 @@
 
             <article class="card job reveal">
               <div class="job-top">
-                <h3>Business Analyst, IT Department</h3>
+                <h2>Business Analyst, IT Department</h2>
                 <span class="job-period">2007 - 2014</span>
               </div>
               <p class="job-company">Adidas Greater China</p>
@@ -1827,7 +1838,7 @@
 
           <aside class="side">
             <div class="card side-card reveal" id="skills">
-              <h3>Expertise</h3>
+              <h2>Expertise</h2>
               <div class="skill-row">
                 <div class="skill-top"><span>Project &amp; Delivery Management</span><span class="pct">95%</span></div>
                 <div class="bar"><div class="bar-fill" data-pct="95"></div></div>
@@ -1859,7 +1870,7 @@
             </div>
 
             <div class="card side-card reveal">
-              <h3>Professional Focus</h3>
+              <h2>Professional Focus</h2>
               <div class="tag-wrap">
                 <span class="tag">WeChat Mini Program</span>
                 <span class="tag">Salesforce on Alibaba Cloud</span>
@@ -1874,7 +1885,7 @@
             </div>
 
             <div class="card side-card reveal" id="credentials">
-              <h3>Certifications</h3>
+              <h2>Certifications</h2>
               <div class="tag-wrap">
                 <span class="tag">PMP - PMI</span>
                 <span class="tag">ITIL Foundation</span>
@@ -1886,19 +1897,19 @@
             </div>
 
             <div class="card side-card reveal">
-              <h3>Education</h3>
+              <h2>Education</h2>
               <div class="edu">
-                <h4>Master of Business Administration (MBA)</h4>
+                <h3>Master of Business Administration (MBA)</h3>
                 <p class="school">Grenoble IAE</p>
                 <span class="years">2017 - 2018</span>
               </div>
               <div class="edu" style="border-top:1px solid var(--line);">
-                <h4>Electronic Information Science &amp; Technology</h4>
+                <h3>Electronic Information Science &amp; Technology</h3>
                 <p class="school">Fudan University</p>
                 <span class="years">2011 - 2016</span>
               </div>
               <div class="edu" style="border-top:1px solid var(--line);">
-                <h4>Logistics Management</h4>
+                <h3>Logistics Management</h3>
                 <p class="school">Shanghai Institute of Xingzhi</p>
                 <span class="years">2004 - 2007</span>
               </div>
@@ -1919,25 +1930,25 @@
         <div class="cta-actions">
           <a class="btn" href="mailto:hello@tiduswang.com">
             Get in touch
-            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
+            <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg>
           </a>
           <div class="contact-list">
             <a class="contact-item" href="https://github.com/TidusWL" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4"/></svg>
               <span>
                 <span class="label">GitHub</span>
                 github.com/TidusWL
               </span>
             </a>
             <a class="contact-item" href="mailto:hello@tiduswang.com">
-              <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg>
               <span>
                 <span class="label">Email</span>
                 hello@tiduswang.com
               </span>
             </a>
             <span class="contact-item">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+              <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
               <span>
                 <span class="label">Location</span>
                 Shanghai, China - Remote Friendly
@@ -2006,7 +2017,7 @@
           if (entry.isIntersecting) {
             var bar = entry.target;
             requestAnimationFrame(function () {
-              bar.style.width = bar.dataset.pct + '%';
+              bar.style.transform = 'scaleX(' + (bar.dataset.pct / 100) + ')';
             });
             barIO.unobserve(bar);
           }
