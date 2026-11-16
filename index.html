@@ -442,7 +442,7 @@
 
     .hero-figure {
       position: relative;
-      height: calc(830 * var(--u));
+      height: calc(745 * var(--u));
       min-height: 520px;
     }
 
@@ -459,17 +459,23 @@
       to { opacity: 1; transform: none; filter: blur(0); }
     }
 
+    .fig-img.cutout {
+      -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 99%);
+      mask-image: linear-gradient(to bottom, #000 88%, transparent 99%);
+      filter: drop-shadow(0 26px 42px rgba(16, 19, 14, .22));
+    }
+
     .fig-img {
       position: absolute;
       right: calc(-2 * var(--u));
       top: calc(-36 * var(--u));
       width: calc(611 * var(--u));
-      height: calc(819 * var(--u));
+      height: calc(733 * var(--u));
       max-width: none;
       object-fit: cover;
       object-position: top center;
-      -webkit-mask-image: radial-gradient(ellipse 58% 74% at 50% 40%, #000 62%, transparent 82%);
-      mask-image: radial-gradient(ellipse 58% 74% at 50% 40%, #000 62%, transparent 82%);
+      -webkit-mask-image: radial-gradient(ellipse 72% 84% at 50% 42%, #000 66%, rgba(0, 0, 0, .45) 84%, transparent 97%);
+      mask-image: radial-gradient(ellipse 72% 84% at 50% 42%, #000 66%, rgba(0, 0, 0, .45) 84%, transparent 97%);
     }
 
     .pulse-dot {
@@ -490,7 +496,7 @@
     .brand-plate {
       position: absolute;
       left: 50%;
-      top: calc(546 * var(--u));
+      top: calc(430 * var(--u));
       transform: translateX(-50%);
       z-index: 3;
       display: flex;
@@ -542,7 +548,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      bottom: calc(26 * var(--u));
+      bottom: calc(8 * var(--u));
       z-index: 2;
       display: flex;
       justify-content: center;
@@ -1372,7 +1378,7 @@
       .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .layout-2col { grid-template-columns: 1fr; }
       .side { position: static; }
-      .hero-figure { height: calc(700 * var(--u)); }
+      .hero-figure { height: calc(640 * var(--u)); }
     }
 
     @media (max-width: 900px) {
@@ -1455,7 +1461,7 @@
       .fig-img {
         position: static;
         width: min(80vw, 360px);
-        height: min(80vw, 400px);
+        height: min(96vw, 432px);
         margin-inline: auto;
       }
 
@@ -1567,7 +1573,7 @@
 
         <div class="hero-figure">
           <div class="fig-drift">
-            <img class="fig-img" src="assets/images/1.png" alt="Portrait of Tidus Wang">
+            <img class="fig-img cutout" src="assets/images/portrait-v2.png" alt="Portrait of Tidus Wang">
           </div>
           <div class="brand-plate">
             <span class="bp-mark" aria-hidden="true">
